@@ -1,0 +1,80 @@
+\documentclass[11pt]{report}
+\usepackage{./assignment}
+\usepackage{slashbox}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage{stmaryrd}
+\usepackage[final]{pdfpages}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{authblk}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+
+\input{./Definitions}
+
+\begin{document}
+\title{
+  \huge STAT 591 Summary Report \\ 
+  \vspace{10mm}
+  \large  Functional Data Analysis for Sparse Longitudinal Data\\
+  \normalsize Fang Yao, Hans-Georg M\"{u}ller \& Jane-Ling Wang}
+
+\author{Wangfei Wang \\ wwang75@uic.edu }
+
+\graphicspath{./Figures/}
+
+\maketitle
+
+\section{INTRODUCTION}
+
+Functional principal components (FPC) analysis can reduce random trajectories of random curves to a set of FPC scores, and therefore is popular in longitudinal data analysis. 
+FPC analysis characterizes the dominant mode of variation of 
+In longitudinal data analysis, it is not uncommon that repeated measurements are infrequent, and these measurements are irregularly spaced per subject. 
+In this situation, FPC analysis has limitations because of the sparse repeated measurements. 
+
+
+To overcome this, the authors of the paper proposed a version of functional principal components (FPC) analysis, in which they framed the FPC scores as conditional expectations. 
+And thus they coined this method ``principal components analysis through conditional expectation (PACE)''.
+
+
+But the current limitation of using FPC analysis in longitudinal data is that when the longitudinal data have sparse repeated measures, it 
+
+\section{FUNCTIONAL PRINCIPAL COMPONENTS ANALYSIS FOR SPARSE DATA}
+
+\subsection*{Model with Measurement Errors}
+\begin{align}
+	\label{eq:eq1}
+	Y_{ij} &= X_i(T_{ij}) + \epsilon_{ij}  \\
+	&= \mu(T_{ij}) + \sum_{k=1}^\infty \xi_{ik}\phi_k(T_{ij}) + \epsilon_{ij}, \; \; \;  T_{ij} \in \mathcal{T} 
+\end{align}
+where $\expec{\epsilon_{ij}} = 0$, var($\epsilon_{ij}$) = $\sigma^2$
+
+
+\subsection*{Estimation of the Model Components}
+In equation \eqref{eq:eq1}, $cov(Y_{ij}, Y_{il} = cov(X(T_{ij}, X(T))))$
+
+\subsection*{Functional Principal Components Analysis Through Conditional Expectation}
+
+\subsection*{Asymptotic Confidence Bands for Individual Trajectories}
+
+\section{ASYMPTOTIC PROPERTIES}
+
+\section{SIMULATION STUDIES}
+
+\section{APPLICATIONS}
+
+\subsection*{Longitudinal CD4 Counts}
+
+\subsection*{Yeast Cell Cycle Gene Expression Profiles}
+
+
+
+
+
+\end{document}
