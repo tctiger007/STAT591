@@ -31,23 +31,46 @@
 
 \maketitle
 
-\section{INTRODUCTION}
-
+\section{SUMMARY OF CONTRIBUTIONS}
 Functional principal components (FPC) analysis can reduce random trajectories of random curves to a set of FPC scores, and therefore is popular in longitudinal data analysis. 
-FPC analysis characterizes the dominant mode of variation of 
-In longitudinal data analysis, it is not uncommon that repeated measurements are infrequent, and these measurements are irregularly spaced per subject. 
+For a given sample of random trajectories, FPC analysis characterizes the dominant mode of variation  around an overall mean trend function. 
+
+In longitudinal data analysis, there are extensive research of FPC analysis on repeated measures at a dense grid of regularly spaced time points. 
+However, it is not uncommon that repeated measurements are infrequent, and these measurements are irregularly spaced per subject. 
 In this situation, FPC analysis has limitations because of the sparse repeated measurements. 
+The authors summarized a few available models that can be applied to irregular grid of time measurements. 
+For example, kernel-based functional principal components analysis for repeated measurements with irregular time points was proposed by Staniswalis and Lee [refs]. %%%%%\cite{}. 
+Their method was further studied by other groups [refs]; %%%%%\\cite{}; 
+however, when the measurement time points vary widely across individuals and the measurements per subject is very sparse (i.e., one or two measurements per subject), the FPC scores cannot be approximated by the usual integration method. 
+Some other groups proposed that by using linear mixed models or reduced-rank mixed effects models, they could use B-splines to model the individual curves with random coefficients [refs]. %%%%%\cite{}.
+But because of the complexity of the models, the asymptotic properties of the estimated components were not investigated. 
 
+Taken together, the authors proposed a simpler and more straightforward method to determine eigenfunctions, which they represent the trajectories directly using the Karhunen-Lo\`{e}ve expansion.
+Their contributions include:
+\begin{itemize}
+	\item They proposed a version of functional principal components (FPC) analysis, in which they framed the FPC scores as conditional expectations.
+	And thus they coined this method ``principal components analysis through conditional expectation (PACE)''.
+	\item In the model, they took into account the additional measurement errors. 
+	\item They derived the asymptotic consistency properties.
+	\item They derived the asymptotic distribution needed for obtaining point-wise confidence intervals for individual trajectories. 
+\end{itemize}
 
-To overcome this, the authors of the paper proposed a version of functional principal components (FPC) analysis, in which they framed the FPC scores as conditional expectations. 
-And thus they coined this method ``principal components analysis through conditional expectation (PACE)''.
-
-
-But the current limitation of using FPC analysis in longitudinal data is that when the longitudinal data have sparse repeated measures, it 
+\section{INNOVATION} 
+\begin{itemize}
+	\item The proposed conditional model is designed for sparse and irregular longitudinal data. 
+	\item Under Gaussian assumptions, the authors showed that estimation of individual FPC scores are the best prediction; and under non-Gaussian assumption, they provide estimates for best linear prediction. 
+	\item One-curve-leave-out cross-validation was proposed to choose auxiliary parameters. 
+	\item Akaike information criterion (AIC) was used for faster computation to select eigenfunctions. 
+\end{itemize}
 
 \section{FUNCTIONAL PRINCIPAL COMPONENTS ANALYSIS FOR SPARSE DATA}
 
 \subsection*{Model with Measurement Errors}
+The authors modeled the sparse functional data as noisy sampled points from trajectories. 
+These trajectories are assumed independent realizations of a smooth random function with unknown mean $\expec{X(t)} = \mu(t)$ and covariance function $cov(X(s), X(t)) = G(s,t)$, where domain of X($\cdot$) is $\mathcal{T}$.
+It was assumed that G has an orthogonal expansion in terms of eigenfunction $\phi_k$ and eigenvalues $\lambda_k$: $G(s,t) = \sum_k{\lambda_k\phi_k(s)\phi_k(t)}, \; \; t, s \in \mathcal{T}$, where $\lambda_1 \geq \lambda_2 \geq \cdot \cdot \cdot$.
+
+
 \begin{align}
 	\label{eq:eq1}
 	Y_{ij} &= X_i(T_{ij}) + \epsilon_{ij}  \\

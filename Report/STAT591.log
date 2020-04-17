@@ -1,12 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  16 APR 2020 22:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  17 APR 2020 15:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/Users/wangfei/Documents/Courses/STAT/STAT591_Wang/Final_Project/Report/STAT5
-91.tex
-
-(/Users/wangfei/Documents/Courses/STAT/STAT591_Wang/Final_Project/Report/STAT59
-1.tex
+**/Users/wangfei/Documents/GitHub/STAT591/Report/STAT591.tex
+(/Users/wangfei/Documents/GitHub/STAT591/Report/STAT591.tex
 LaTeX2e <2018-12-01>
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2018/09/03 v1.4i Standard LaTeX document class
@@ -562,58 +559,59 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ) [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+msa on input line 39.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 51.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 51.
+LaTeX Font Info:    Try loading font information for U+msa on input line 70.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 39.
+LaTeX Font Info:    Try loading font information for U+msb on input line 70.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 39.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 70.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 39.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 70.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 39.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 70.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 39.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.44 where $\expec {\epsilon_{ij} = 0}$
-                                       , var($\epsilon_{ij}$) = $\sigma^2$
-? 
-! Emergency stop.
-<inserted text> 
-                }
-l.44 where $\expec {\epsilon_{ij} = 0}$
-                                       , var($\epsilon_{ij}$) = $\sigma^2$
-End of file on the terminal!
-
- 
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 70.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.72 
+      [1]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
+ [2]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
+ (./STAT591.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
+Package rerunfilecheck Info: File `STAT591.out' has not changed.
+(rerunfilecheck)             Checksum: A62542A08084E0192B002A1459577BA8;363.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
+ ) 
 Here is how much of TeX's memory you used:
- 10201 strings out of 492616
- 140123 string characters out of 6129482
- 247043 words of memory out of 5000000
- 13937 multiletter control sequences out of 15000+600000
+ 10232 strings out of 492616
+ 140517 string characters out of 6129482
+ 252039 words of memory out of 5000000
+ 13953 multiletter control sequences out of 15000+600000
  16977 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,8n,39p,381b,365s stack positions out of 5000i,500n,10000p,200000b,80000s
-!  ==> Fatal error occurred, no output PDF file produced!
-ng characters out of 6129482
- 250039 words of memory out of 5000000
- 13937 multiletter control sequences out of 15000+600000
- 16977 words of font info for 55 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 37i,8n,39p,381b,365s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,8n,39p,421b,365s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
@@ -628,10 +626,10 @@ l/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/
 texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texl
 ive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb>
-Output written on STAT591.pdf (2 pages, 150903 bytes).
+Output written on STAT591.pdf (3 pages, 159069 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 84 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 110 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
+ 49 words of extra memory for PDF output out of 10000 (max. 10000000)
 
