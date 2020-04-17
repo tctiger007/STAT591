@@ -69,8 +69,7 @@ Their contributions include:
 The authors modeled the sparse functional data as noisy sampled points from trajectories. 
 These trajectories are assumed independent realizations of a smooth random function with unknown mean $\expec{X(t)} = \mu(t)$ and covariance function $cov(X(s), X(t)) = G(s,t)$, where domain of X($\cdot$) is $\mathcal{T}$.
 It was assumed that G has an orthogonal expansion in terms of eigenfunction $\phi_k$ and eigenvalues $\lambda_k$: $G(s,t) = \sum_k{\lambda_k\phi_k(s)\phi_k(t)}, \; \; t, s \in \mathcal{T}$, where $\lambda_1 \geq \lambda_2 \geq \cdot \cdot \cdot$.
-
-
+Assuming $Y_{ij}$ is the jth observation of the random function X($\cdot$) made at a random time $T_{ij}$ and let $\epsilon_{ij}$ be the measurement errors that are iid and are independent of random coefficients $\xi_{ik}$, where $i = 1, ..., n; j = 1, ..., N_i; k = 1, 2, ...$, the authors constructed a model: 
 \begin{align}
 	\label{eq:eq1}
 	Y_{ij} &= X_i(T_{ij}) + \epsilon_{ij}  \\
@@ -80,6 +79,10 @@ where $\expec{\epsilon_{ij}} = 0$, var($\epsilon_{ij}$) = $\sigma^2$
 
 
 \subsection*{Estimation of the Model Components}
+Under the assumption that the mean, covariance and eigenfunctions are smooth, the authors first estimated the mean function $\mu$ based on the pooled data from all individuals:
+\begin{align}
+	\label{eq:}
+\end{align}
 In equation \eqref{eq:eq1}, $cov(Y_{ij}, Y_{il} = cov(X(T_{ij}, X(T))))$
 
 \subsection*{Functional Principal Components Analysis Through Conditional Expectation}
