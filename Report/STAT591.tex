@@ -79,12 +79,43 @@ where $\expec{\epsilon_{ij}} = 0$, var($\epsilon_{ij}$) = $\sigma^2$
 
 
 \subsection*{Estimation of the Model Components}
-Under the assumption that the mean, covariance and eigenfunctions are smooth, the authors first estimated the mean function $\mu$ based on the pooled data from all individuals:
+Under the assumption that the mean, covariance and eigenfunctions are smooth, the authors first estimated the mean function $\mu$ based on the pooled data from all individuals. {}{}
+First, $\mu$ can be estimated by minimizing the following equation \eqref{eq:A.2} respect to $\beta_0$ and $\beta_1$, and obtained as $\hat{\mu}(t) = \hat{\beta_0}(t)$.
+Denote kernel functions $\kappa_1: {\rm I\!R} \rightarrow {\rm I\!R} $ and $\kappa_2: {\rm I\!R}^2 \rightarrow {\rm I\!R} $ that satisfy several conditions (omitted here; see appendix of the paper).
 \begin{align}
-	\label{eq:}
+	\label{eq:A.2}
+	\sum_{i=1}^{n}\sum_{j=1}^{N_i}\kappa_1(\frac{T_{ij}-t}{h_\mu})\{Y_{ij}-\beta_0-\beta_1(t-T{ij})\}^2{}
 \end{align}
-In equation \eqref{eq:eq1}, $cov(Y_{ij}, Y_{il} = cov(X(T_{ij}, X(T))))$
 
+% 	\[   
+% 	\iint u^{l_1}\nu^{l_2}\kappa_2(u,\nu)dud\nu{} = 
+% 	\left\{
+% \begin{array}{ll}
+%       0 & x\leq l_1+l_2 <l, l_1 \neq \nu_1, l_2 \neq \nu_2 \\
+%       (-1)^{|\nu|}|\nu|! & l_1 = \nu_1, l_2 = \nu_2\\
+%       \neq 0 & l_1 + l_2 = l\\
+% \end{array} 
+% 		\right. \]
+
+% where $|\nu| = \nu_1 + \nu_2$, kernel functions $\kappa_1: {\rm I\!R} \rightarrow {\rm I\!R} $ and $\kappa_2: {\rm I\!R}^2 \rightarrow {\rm I\!R} $, 
+
+
+\begin{align}
+	cov(Y_{ij}, Y_{il}) &= cov(X(T_{ij}), X(T_{ij}))+\sigma^2\delta_{ij}
+\end{align}
+where $\delta_{jl} = 1$ if $j=l$ and $0$ otherwise. 
+Denote ``raw'' covariances: $G_i(T_{ij}, T_{il}) = (Y_{ij}-\hat{\mu}(T_{ij}))(Y_{il}-\hat{\mu}(T_{il}))$.
+It can be shown that $\expec{\left[G_i(T_{ij}, T_{il})|T_{ij}, T_{il}\right]} \approx cov(X(T_{ij}), X(T_{il})) + \sigma^2 \delta_{jl}$, and thus only $G_i(T_{ij}, T_{il}), j\neq l$ should be included for the covariance surface smoothing step. 
+One-curve-leave-out cross-validation is used to select smoothing parameter. 
+
+Denote $\hat{G}(s, t)$ be the estimate of $G(s, t)$. 
+The local linear surface smoother for $G(s, t)$ can be estimated by minimizing the following equation \eqref{eq: A.3} with respect to $\pmb{\beta} = (\beta_0, \beta_{11}, \beta_{12})$, yielding estimate $\hat{G}(s, t) = \hat{\beta_0}(s,t)$:
+
+\begin{align}
+	\label{eq: A.3}
+	\sum_{i=1}^{n}\sum_{1 \leq j \neq l \leq N_i}\kappa_2(\frac{T_{ij}-s}{h_G}, \frac{T_{il}-t}{h_G}) \times \{G_i(T_{ij}, T_{il})-f(\pmb{\beta}, (s, t), (T_{ij}, T_{il}))\}^2
+\end{align}
+ 
 \subsection*{Functional Principal Components Analysis Through Conditional Expectation}
 
 \subsection*{Asymptotic Confidence Bands for Individual Trajectories}
