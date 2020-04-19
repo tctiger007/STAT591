@@ -67,7 +67,7 @@ Their contributions include:
 
 \subsection*{Model with Measurement Errors}
 The authors modeled the sparse functional data as noisy sampled points from trajectories. 
-These trajectories are assumed independent realizations of a smooth random function with unknown mean $\expec{X(t)} = \mu(t)$ and covariance function $cov(X(s), X(t)) = G(s,t)$, where domain of X($\cdot$) is $\mathcal{T}$.
+These trajectories are assumed independent realizations of a smooth random function with unknown mean $E{X(t)} = \mu(t)$ and covariance function $cov(X(s), X(t)) = G(s,t)$, where domain of X($\cdot$) is $\mathcal{T}$.
 It was assumed that G has an orthogonal expansion in terms of eigenfunction $\phi_k$ and eigenvalues $\lambda_k$: $G(s,t) = \sum_k{\lambda_k\phi_k(s)\phi_k(t)}, \; \; t, s \in \mathcal{T}$, where $\lambda_1 \geq \lambda_2 \geq \cdot \cdot \cdot$.
 Assuming $Y_{ij}$ is the jth observation of the random function X($\cdot$) made at a random time $T_{ij}$ and let $\epsilon_{ij}$ be the measurement errors that are iid and are independent of random coefficients $\xi_{ik}$, where $i = 1, ..., n; j = 1, ..., N_i; k = 1, 2, ...$, the authors constructed a model: 
 \begin{align}
@@ -75,54 +75,138 @@ Assuming $Y_{ij}$ is the jth observation of the random function X($\cdot$) made 
 	Y_{ij} &= X_i(T_{ij}) + \epsilon_{ij}  \\
 	&= \mu(T_{ij}) + \sum_{k=1}^\infty \xi_{ik}\phi_k(T_{ij}) + \epsilon_{ij}, \; \; \;  T_{ij} \in \mathcal{T} 
 \end{align}
-where $\expec{\epsilon_{ij}} = 0$, var($\epsilon_{ij}$) = $\sigma^2$
+where $E{\epsilon_{ij}} = 0$, var($\epsilon_{ij}$) = $\sigma^2$
 
 
 \subsection*{Estimation of the Model Components}
-Under the assumption that the mean, covariance and eigenfunctions are smooth, the authors first estimated the mean function $\mu$ based on the pooled data from all individuals. {}{}
-First, $\mu$ can be estimated by minimizing the following equation \eqref{eq:A.2} respect to $\beta_0$ and $\beta_1$, and obtained as $\hat{\mu}(t) = \hat{\beta_0}(t)$.
-Denote kernel functions $\kappa_1: {\rm I\!R} \rightarrow {\rm I\!R} $ and $\kappa_2: {\rm I\!R}^2 \rightarrow {\rm I\!R} $ that satisfy several conditions (omitted here; see appendix of the paper).
-\begin{align}
-	\label{eq:A.2}
-	\sum_{i=1}^{n}\sum_{j=1}^{N_i}\kappa_1(\frac{T_{ij}-t}{h_\mu})\{Y_{ij}-\beta_0-\beta_1(t-T{ij})\}^2{}
-\end{align}
+\begin{itemize}
+	\item{Estimation of mean function $\mu$}
+	Under the assumption that the mean, covariance and eigenfunctions are smooth, the authors first estimated the mean function $\mu$ based on the pooled data from all individuals.
+	The mean function $\mu$ can be estimated by minimizing the following equation \eqref{eq:A2} respect to $\beta_0$ and $\beta_1$, and obtained as $\hat{\mu}(t) = \hat{\beta_0}(t)$.
+	Denote kernel functions $\kappa_1: {\rm I\!R} \rightarrow {\rm I\!R} $ and $\kappa_2: {\rm I\!R}^2 \rightarrow {\rm I\!R} $ that satisfy several conditions (omitted here; see appendix of the paper).
+	\begin{align}
+		\label{eq:A2}
+		\sum_{i=1}^{n}\sum_{j=1}^{N_i}\kappa_1(\frac{T_{ij}-t}{h_\mu})\{Y_{ij}-\beta_0-\beta_1(t-T{ij})\}^2{}
+	\end{align}
 
-% 	\[   
-% 	\iint u^{l_1}\nu^{l_2}\kappa_2(u,\nu)dud\nu{} = 
-% 	\left\{
-% \begin{array}{ll}
-%       0 & x\leq l_1+l_2 <l, l_1 \neq \nu_1, l_2 \neq \nu_2 \\
-%       (-1)^{|\nu|}|\nu|! & l_1 = \nu_1, l_2 = \nu_2\\
-%       \neq 0 & l_1 + l_2 = l\\
-% \end{array} 
-% 		\right. \]
+	% 	\[   
+	% 	\iint u^{l_1}\nu^{l_2}\kappa_2(u,\nu)dud\nu{} = 
+	% 	\left\{
+	% \begin{array}{ll}
+	%       0 & x\leq l_1+l_2 <l, l_1 \neq \nu_1, l_2 \neq \nu_2 \\
+	%       (-1)^{|\nu|}|\nu|! & l_1 = \nu_1, l_2 = \nu_2\\
+	%       \neq 0 & l_1 + l_2 = l\\
+	% \end{array} 
+	% 		\right. \]
 
-% where $|\nu| = \nu_1 + \nu_2$, kernel functions $\kappa_1: {\rm I\!R} \rightarrow {\rm I\!R} $ and $\kappa_2: {\rm I\!R}^2 \rightarrow {\rm I\!R} $, 
+	% where $|\nu| = \nu_1 + \nu_2$, kernel functions $\kappa_1: {\rm I\!R} \rightarrow {\rm I\!R} $ and $\kappa_2: {\rm I\!R}^2 \rightarrow {\rm I\!R} $, 
+
+	\item{Estimation of measurement errors $\sigma^2$}
+	\begin{align}
+	    \label{eq:eq2}
+	    \hat{\sigma^2} &= \frac{2}{|\mathcal{T}|}\int_{\mathcal{T}_1}\{\hat{V}(t) - \tilde{G}(t)\}dt 
+	\end{align}
+	if $\hat{\sigma}^2>0$ and $\hat{\sigma}^2 = 0$ otherwise.
+	In the above equation \eqref{eq:eq2}, $\tilde{G}$ is the diagonal of the surface estimate, $\hat{V}(t)$ is a local linear smoother focusing on diagonal values $\{G(t,t) + \sigma^2\}$ obtained by equation A.1 in the appendix of the paper with $\{G_i(T_{ij}, T_{ij})\}$.
 
 
-\begin{align}
-	cov(Y_{ij}, Y_{il}) &= cov(X(T_{ij}), X(T_{ij}))+\sigma^2\delta_{ij}
-\end{align}
-where $\delta_{jl} = 1$ if $j=l$ and $0$ otherwise. 
-Denote ``raw'' covariances: $G_i(T_{ij}, T_{il}) = (Y_{ij}-\hat{\mu}(T_{ij}))(Y_{il}-\hat{\mu}(T_{il}))$.
-It can be shown that $\expec{\left[G_i(T_{ij}, T_{il})|T_{ij}, T_{il}\right]} \approx cov(X(T_{ij}), X(T_{il})) + \sigma^2 \delta_{jl}$, and thus only $G_i(T_{ij}, T_{il}), j\neq l$ should be included for the covariance surface smoothing step. 
-One-curve-leave-out cross-validation is used to select smoothing parameter. 
+	From \eqref{eq:eq1}, we know $cov(Y_{ij}, Y_{il}) = cov(X(T_{ij}), X(T_{ij}))+\sigma^2\delta_{ij}$, where $\delta_{jl} = 1$ if $j=l$ and $0$ otherwise. 
+	Denote ``raw'' covariances: $G_i(T_{ij}, T_{il}) = (Y_{ij}-\hat{\mu}(T_{ij}))(Y_{il}-\hat{\mu}(T_{il}))$.
+	It can be shown that $E{\left[G_i(T_{ij}, T_{il})|T_{ij}, T_{il}\right]} \approx cov(X(T_{ij}), X(T_{il})) + \sigma^2 \delta_{jl}$, and thus only $G_i(T_{ij}, T_{il}), j\neq l$ should be included for the covariance surface smoothing step. 
+	One-curve-leave-out cross-validation is used to select smoothing parameter. 
 
-Denote $\hat{G}(s, t)$ be the estimate of $G(s, t)$. 
-The local linear surface smoother for $G(s, t)$ can be estimated by minimizing the following equation \eqref{eq: A.3} with respect to $\pmb{\beta} = (\beta_0, \beta_{11}, \beta_{12})$, yielding estimate $\hat{G}(s, t) = \hat{\beta_0}(s,t)$:
+	Denote $\hat{G}(s, t)$ be the estimate of $G(s, t)$. 
+	The local linear surface smoother for $G(s, t)$ can be estimated by minimizing the following equation \eqref{eq:A3} with respect to $\pmb{\beta} = (\beta_0, \beta_{11}, \beta_{12})$, yielding estimate $\hat{G}(s, t) = \hat{\beta_0}(s,t)$:
 
-\begin{align}
-	\label{eq: A.3}
-	\sum_{i=1}^{n}\sum_{1 \leq j \neq l \leq N_i}\kappa_2(\frac{T_{ij}-s}{h_G}, \frac{T_{il}-t}{h_G}) \times \{G_i(T_{ij}, T_{il})-f(\pmb{\beta}, (s, t), (T_{ij}, T_{il}))\}^2
-\end{align}
- 
+	\begin{align}
+		\label{eq:A3}
+		\sum_{i=1}^{n}\sum_{1 \leq j \neq l \leq N_i}\kappa_2(\frac{T_{ij}-s}{h_G}, \frac{T_{il}-t}{h_G}) \times \{G_i(T_{ij}, T_{il})-f(\pmb{\beta}, (s, t), (T_{ij}, T_{il}))\}^2
+	\end{align}
+
+	To obtain the diagonal estimate $\tilde{G}(t)$, the authors rotate x-axis and y-axis by 45-degrees, i.e., $\big(\begin{smallmatrix}
+	T_{ij}^* \\
+	T_{ik}^*
+	\end{smallmatrix}\big) = \big(\begin{smallmatrix}
+	\sqrt{2}/2 & \sqrt{2}/2\\
+	-\sqrt{2}/2 & \sqrt{2}/2
+	\end{smallmatrix}\big)\big(\begin{smallmatrix} 
+	T_{ij} \\
+	T_{ik}
+	\end{smallmatrix}\big)$.  
+	Then the authors obtain the surface estimate $\bar{G}(s,t)$ by minimizing the weighted least squares:
+	\begin{align}
+		\label{eq:A4}
+		\sum_{i=1}^{n}\sum_{1 \leq j \neq l \leq N_i}\kappa_2(\frac{T_{ij}^*-s}{h_G}, \frac{T_{il}^*-t}{h_G}) \times \{G_i(T_{ij}^*, T_{il}^*)-f(\pmb{\gamma}, (s, t), (T_{ij}^*, T_{il}^*))\}^2
+	\end{align}
+	where $g(\pmb{\gamma}, (s, t), (T_{ij}^*, T_{il}^*)) = \gamma_0+\gamma_1(s-T_{ij}^*)+\gamma_2(t-T_{ik}^*)$. Minimizing with respect to $\pmb{\gamma}=(\gamma_1, \gamma_2, \gamma_3)^T$, they get $\bar{G}(s,t) = \hat{\gamma}_0(s,t)$. Finally, $\tilde{G}(t) = \bar{G}(0, t/\sqrt(2))$. 
+
+	\item{Estimation of eigenfunctions and eigenvalues $\phi_k$ and $\lambda_k$}
+	\begin{align}
+		\label{eq:eq3}
+		\int_\mathcal{T} \hat{G}(s,t)\hat{{\phi_k}}(s)ds &= \hat{\lambda_k}\hat{\phi}_k(t)
+	\end{align}
+	where the $\hat{\phi}_k$ are subject to $\int_\mathcal{T}\hat{\phi}_k(t)^2dt = 1$ and $\int_\mathcal{T}\hat{\phi}_k(t) \times \hat{\phi}_m(t)dt = 0$ for $m<k$.
+\end{itemize}
+
+
 \subsection*{Functional Principal Components Analysis Through Conditional Expectation}
+Because of the sparsity of the observations per subject, simply substituting $Y_{ij}$ for $X_i(T_{ij})$ in equation \eqref{eq:eq1} and then estimate $\hat{\xi}_{ik}^S = \sum_{j=1}^{N_i}(Y_{ij}-\hat{\mu}(T_{ij}))\hat{\phi}_k(T_{ij})(T_{ij}-T_{i,j-1})$ setting $T_{i0}=0$ will not provide reasonable approximations to $\hat{\xi}_{ik}^S$. 
+Therefore, the authors proposed to estimate FPC scores $\xi_{ik}$ under the assumption that $\xi_{ik}$ and $\epsilon_{ij}$ are jointly Gaussian using:
+\begin{align}
+	\label{eq:eq5}
+	\hat{\xi}_{ik} = \widehat{E}{[\xi_{ik}|\widetilde{\pmb{Y}}_i]} = \hat{\lambda}_k\hat{\pmb{\phi}}_{ik}^T\hat{\pmb{\Sigma}}_{\pmb{Y}_i}^{-1}(\tilde{\pmb{Y}}_i - \hat{\pmb{\mu}}_i)
+\end{align}
+where the $(j,l)$ th element of $\hat{\mathbf{\Sigma}}_{\mathbf{Y}_i}$ is $(\hat{\mathbf{\Sigma}}_{\mathbf{Y}_i})_{j,l} = \hat{G}(T_{ij}, T_{il}) + \sigma^2\delta_{jl}$. Under the Gaussian assumption, the $\tilde{\xi}_{ik} = E[\xi_{ik}|\widetilde{\pmb{Y}}_i]$ is the best prediction of the FPC score. 
+The prediction for the trajectory $X_i(t)$ for the $i$th subject using the first K eigenfunctions is then:
+\begin{align}
+	\label{eq:eq6}
+	\widehat{X_i}^K(t) = \hat{\mu}(t)+\sum_{k=1}^{K}\hat{\hat{\xi}}_{ik}\hat{\phi}_k(t)
+\end{align}
+From \nameref{simul}, the authors showed that this proposed model is also robust when the Gaussian assumption does not hold. 
+
 
 \subsection*{Asymptotic Confidence Bands for Individual Trajectories}
+The $(1-\alpha)$ asymptotic simultaneous confidence bands for $X_i(t)$ can be obtained:
+\begin{align}
+	\label{eq:eq8}
+	\widehat{X}_i^K(t) \pm \sqrt{\chi^2_{K,1-\alpha}\hat{\pmb{\phi}}_{K,t}^T\widehat{\pmb{\Omega}}_K\hat{\pmb{\phi}}_{K,t}}
+\end{align}
+where $\chi^2_{K,1-\alpha}$ is the $100(1-\alpha)$th percentile of the chi-squared distribution with K degrees of freedom. 
+
+For all linear combinations of the FPC scores, the authors proved that they could be obtained by:
+\begin{align}
+	\label{eq:eq9}
+	\pmb{I}^T\pmb{\xi}_{K,i} \in \pmb{I}^T\hat{\pmb{\xi}}_{K,i} \pm \sqrt{\chi^2_{d,1-\alpha}\pmb{I}^T\widehat{\pmb{\Omega}}\pmb{I}}
+\end{align}
+with approximate probability $(1-\alpha)$, where $\mathbf{I}\in \mathcal{A}$, $\mathcal{A} \subseteq {\rm I\!R}^K$ is a linear space with dimension $d\leq K$.
+
+
+\subsection*{Selection of the Number of Eigenfunctions}
+The authors proposed to choose the number of eigenfunctions K that minimizes the cross-validation score:
+\begin{align}
+	\label{eq:eq10}
+	CV(K) = \sum_{i=1}^{n}\sum_{j=1}^{N_i}\{Y_{ij}-\widehat{Y}_i^{(-i)}(T_{ij})\}^2
+\end{align} 
+where $\widehat{Y}_i^{(-i)}$ is the predicted curve for the $i$th subject, computed after removing the data for this subject.
+$\widehat{Y}_i^{(-i)}(t) = \hat{\mu}^{(-i)}(t) + \sum_{k=1}^{K}\hat{\xi_{ik}}^{(-i)}(t)\hat{\phi}_{k}^{(-i)}(t)$, where $\hat{\xi}_{ik}$ can be obtained from \eqref{eq:eq5}.
+
+The authors used AIC-type criteria because they found that it was more computationally efficient. 
+They generated a pseudo-Gausian log-likelihood 
+\begin{align}
+	\label{eq:eq11}
+	\widehat{L} = \sum_{i=1}^n\big\{-\frac{N_i}{2}log(2\pi) - \frac{N_i}{2}log\hat{\sigma}^2 - \frac{1}{2\hat{\sigma}^2}(\widetilde{\pmb{Y}}_i - \hat{\pmb{\mu}}_i - \sum_{k=1}^{K}\hat{\xi}_{ik}\hat{\pmb{\phi}}_{ik})^T \times (\widetilde{\pmb{Y}}_i - \hat{\pmb{\mu}}_i - \sum_{k=1}^{K}\hat{\xi}_{ik}\hat{\pmb{\phi}}_{ik}) \big\}
+\end{align} 
+where AIC = $-\widehat{L} + K$.
 
 \section{ASYMPTOTIC PROPERTIES}
+One major contribution of this paper was that the authors have proved the consistency of the estimated FPC scores $\hat{\xi}_{ik}$ in \eqref{eq:eq5} for the true conditional expectations $\xi_{ik}$. 
 
 \section{SIMULATION STUDIES}
+\label{simul}
+\begin{figure}[h]
+	\includegraphics[width = 7 in]{Figures/Table1.png}
+	\centering
+\end{figure}
 
 \section{APPLICATIONS}
 
