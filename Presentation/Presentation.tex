@@ -214,65 +214,92 @@
 	}
 	\frame{
 	    \frametitle{Applications}
+	    \textbf{Objectives:} 
+	    \begin{itemize}
+	    	\item To estimate the overall trend over time
+	    	\item To study subject-specific variation patterns
+	    	\item To uncover the dominant modes of variation
+	    	\item To recover individual trajectories from sparse measurements.
+	    \end{itemize}
+	    \textbf{Datasets:} 
 	    \begin{itemize}
 	    	\item Longitudinal CD4 Counts
 	    	\item Yeast Cell Cycle Gene Expression Profiles
 	    \end{itemize}
 	}
 	\frame{
-	    \frametitle{Potential applications of the proposed method}
-	    This is a paragraph.
+	    \frametitle{Longitudinal CD4 Counts}
+	    \small A cohort of 283 homosexual men who became HIV-positive between 1984 and 1991. 
+		CD4 counts and CD4 percentage were recorded over 5 years at their semiannual visits. 
+		
+		\begin{figure}[h]
+			%\label{fig:fig1}
+			\vspace{-0.28 cm}
+			\includegraphics[width = 2.8 in]{Figure1.png}
+			\centering
+			\vspace{-0.2 cm}
+		\end{figure}
+		\footnotesize \textbf{Figure 1.} (a) Individual trajectories of CD4 percentage in 283 individuals. (b) Smooth estimate of the mean function. (c) Smooth estimate of the variance function for CD4 counts. (d) Smooth estimate of correlation function. 
 	}
+	\frame{
+	    \frametitle{Longitudinal CD4 Counts}
+	    
+		\begin{figure}[h]
+			\label{fig:fig5}
+			\vspace{-0.18 cm}
+			\includegraphics[width = 3 in]{Figure5.png}
+			\centering
+			%\caption{}
+		\end{figure}
+		\footnotesize \textbf{Figure 2.} Observations (circles), predicted (solid lines) trajectories, and 95\% pointwise (dashed lines) and simultaneous (dotted lines) bands for four randomly chosen individuals, for the CD4 count data.
+	}
+	\frame{
+	    \frametitle{Yeast Cell Cycle Gene Expression Profiles}
+	    \footnotesize \textbf{Whole dataset}: The training set include 6178 genes with each gene expression profile consists of 18 data points, measured every 7 minutes in a span of 0 to 119 minutes. \\
+	    \footnotesize \textbf{``Sparsified'' dataset}: The authors artificially induced sparsity to the data by randomly selecting $N_i \; \in (1 - 6)$ with equal probability, and then randomly select from the 18 recorded gene expression measurements (the median of the number of observations per gene expression profile is 3).
+	    \begin{figure}[h]
+	    	\label{fig:fig6}
+			\vspace{-0.18 cm}
+			\includegraphics[width = 2.4 in]{Figure6.png}
+			\centering
+		\end{figure}
+		\footnotesize \textbf{Figure 3.} Left: the whole dataset. Right: the ``sparsified'' dataset.
+	}
+	\frame{
+	    \frametitle{Yeast Cell Cycle Gene Expression Profiles}
+	    \begin{figure}[h]
+	    	\label{fig:fig7}
+			\vspace{-0.18 cm}
+			\includegraphics[width = 3 in]{Figure7.png}
+			\centering
+			%\caption{}
+		\end{figure}
+		\footnotesize \textbf{Figure 4.} Smooth surface estimates $\widehat{G}$ of the covariance functions from the complete data (a) and from the sparsified data (b).
+	}
+	\frame{
+	    \frametitle{Yeast Cell Cycle Gene Expression Profiles}
+	    \begin{figure}[h]
+	    	\label{fig:fig8}
+			\vspace{-0.18 cm}
+			\includegraphics[width = 3 in]{Figure8.png}
+			\centering
+			%\caption{}
+		\end{figure}
+		\footnotesize \textbf{Figure 5.} Smooth estimates of the mean function (a), the first (b) and second (c) eigenfunctions, obtained from sparse (solid lines) and complete (dashed lines) data.
+	}
+	\frame{
+	    \frametitle{Potential applications of the proposed method}
+	    \begin{itemize}
+	    	\item Longitudinal data with sparse measurements per subject.
+	    	\item Longitudinal data with irregularly spaced measurements.
+	    	\item To help impute missing data in longitudinal studies. 
+	    	\item PACE can also be used for regularly spaced data, which was also shown to be advantageous in this study. 
+	    \end{itemize}
+	 	}
 	\frame{
 	    \frametitle{Propose one or two possible topics/questions for future research in this area.}
 	    This is a paragraph.
 	}
-	\frame{
-	    \frametitle{Paragraph Content}
-	    This is a paragraph.
-	}
-	\frame{
-	    \frametitle{Paragraph Content}
-	    This is a paragraph.
-	}
-	\frame{
-	    \frametitle{Paragraph Content}
-	    This is a paragraph.
-	}
-	\frame{
-	    \frametitle{Paragraph Content}
-	    This is a paragraph.
-	}
-	\frame{
-	    \frametitle{Paragraph Content}
-	    This is a paragraph.
-	}
-	\frame{
-	    \frametitle{Paragraph Content}
-	    This is a paragraph.
-	}
-	\frame{
-	    \frametitle{Paragraph Content}
-	    This is a paragraph.
-	}
-	\frame{
-	    \frametitle{Paragraph Content}
-	    This is a paragraph.
-	}
-	\frame{
-	    \frametitle{Paragraph Content}
-	    This is a paragraph.
-	}
-	\frame{
-	    \frametitle{Paragraph Content}
-	    This is a paragraph.
-	}
-	\frame{
-	    \frametitle{Paragraph Content}
-	    This is a paragraph.
-	}
-	\frame{
-	    \frametitle{Paragraph Content}
-	    This is a paragraph.
-	}
+	
+	
 \end{document}
