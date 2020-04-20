@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  20 APR 2020 11:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  20 APR 2020 14:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -427,4 +427,333 @@ e
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/bbm-macros/bbm.sty
-Package: bbm 1999/03/15 V 1.2 pr
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen130
+\WF@size=\dimen131
+\c@WF@wrappedlines=\count127
+\WF@box=\box37
+\WF@everypar=\toks33
+Package: wrapfig 2003/01/31  v 3.6
+)
+(./Definitions.tex (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup8
+\symboldletters=\mathgroup9
+\symboldsymbols=\mathgroup10
+\symboldlasy=\mathgroup11
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count128
+\c@ALC@line=\count129
+\c@ALC@rem=\count130
+\c@ALC@depth=\count131
+\ALC@tlm=\skip80
+\algorithmicindent=\skip81
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count132
+\algocf@hangindent=\skip82
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count133
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip83
+\skiplinenumber=\skip84
+\skiprule=\skip85
+\skiphlne=\skip86
+\skiptext=\skip87
+\skiplength=\skip88
+\algomargin=\skip89
+\skipalgocfslide=\skip90
+\algowidth=\dimen132
+\inoutsize=\dimen133
+\inoutindent=\dimen134
+\interspacetitleruled=\dimen135
+\interspacealgoruled=\dimen136
+\interspacetitleboxruled=\dimen137
+\algocf@ruledwidth=\skip91
+\algocf@inoutbox=\box38
+\algocf@inputbox=\box39
+\AlCapSkip=\skip92
+\AlCapHSkip=\skip93
+\algoskipindent=\skip94
+\algocf@nlbox=\box40
+\algocf@hangingbox=\box41
+\algocf@untilbox=\box42
+\algocf@skipuntil=\skip95
+\algocf@capbox=\box43
+\algocf@lcaptionbox=\skip96
+\algoheightruledefault=\skip97
+\algoheightrule=\skip98
+\algotitleheightruledefault=\skip99
+\algotitleheightrule=\skip100
+\c@algocfline=\count134
+\c@algocfproc=\count135
+\c@algocf=\count136
+\algocf@algoframe=\box44
+\algocf@algobox=\box45
+)
+\c@theorem=\count137
+\c@example=\count138
+\c@property=\count139
+)
+(./STAT591.aux)
+\openout1 = `STAT591.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+ ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 28.
+
+(/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count140
+\scratchdimen=\dimen138
+\scratchbox=\box46
+\nofMPsegments=\count141
+\nofMParguments=\count142
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count143
+\MPscratchDim=\dimen139
+\MPnumerator=\count144
+\makeMPintoPDFobject=\count145
+\everyMPtoPDFconversion=\toks35
+)
+\AtBeginShipoutBox=\box47
+Package hyperref Info: Link coloring ON on input line 28.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count146
+)
+LaTeX Info: Redefining \ref on input line 28.
+LaTeX Info: Redefining \pageref on input line 28.
+LaTeX Info: Redefining \nameref on input line 28.
+
+(./STAT591.out) (./STAT591.out)
+\@outlinefile=\write3
+\openout3 = `STAT591.out'.
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+) [1
+
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for U+msa on input line 74.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 74.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 74.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+stmry on input line 74.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 74.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 74.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.81 \end{align}
+                 [1]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 87.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 87.
+ [2] [3]
+<Figures/Table1.png, id=90, 607.26875pt x 350.30875pt>
+File: Figures/Table1.png Graphic file (type png)
+<use Figures/Table1.png>
+Package pdftex.def Info: Figures/Table1.png  used on input line 229.
+(pdftex.def)             Requested size: 225.48038pt x 130.06654pt.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 235.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+) [4 <./Figures/Table1.png>]
+<Figures/Figure1.png, id=101, 397.485pt x 331.2375pt>
+File: Figures/Figure1.png Graphic file (type png)
+<use Figures/Figure1.png>
+Package pdftex.def Info: Figures/Figure1.png  used on input line 256.
+(pdftex.def)             Requested size: 300.6429pt x 250.54524pt.
+
+Underfull \hbox (badness 2573) in paragraph at lines 266--268
+\T1/cmr/m/n/10.95 2) Vari-ance is non-stationary
+ []
+
+
+Underfull \hbox (badness 1072) in paragraph at lines 266--268
+\T1/cmr/m/n/10.95 (de-creases at early times and
+ []
+
+
+Underfull \hbox (badness 1077) in paragraph at lines 269--271
+\T1/cmr/m/n/10.95 3) $\OML/cmm/m/it/10.95 K \OT1/cmr/m/n/10.95 = 3$ \T1/cmr/m/n
+/10.95 was cho-sen from
+ []
+
+
+Underfull \hbox (badness 1496) in paragraph at lines 269--271
+\T1/cmr/m/n/10.95 count for 76.9%, 12.3%, and
+ []
+
+<Figures/Figure5.png, id=105, 751.80875pt x 632.3625pt>
+File: Figures/Figure5.png Graphic file (type png)
+<use Figures/Figure5.png>
+Package pdftex.def Info: Figures/Figure5.png  used on input line 274.
+(pdftex.def)             Requested size: 277.15372pt x 233.12134pt.
+
+Underfull \hbox (badness 1062) in paragraph at lines 281--285
+[]\T1/cmr/m/n/10.95 4) The pre-dicted curves and 95%
+ []
+
+
+Underfull \hbox (badness 3271) in paragraph at lines 281--285
+\T1/cmr/m/n/10.95 point-wise and si-mul-ta-ne-ous con-fi-
+ []
+
+[5 <./Figures/Figure1.png> <./Figures/Figure5.png>]
+<Figures/Figure8.png, id=120, 780.9175pt x 604.2575pt>
+File: Figures/Figure8.png Graphic file (type png)
+<use Figures/Figure8.png>
+Package pdftex.def Info: Figures/Figure8.png  used on input line 313.
+(pdftex.def)             Requested size: 324.13208pt x 250.80829pt.
+
+
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 32
+0.
+
+
+Overfull \hbox (3.72354pt too wide) in paragraph at lines 321--328
+[][]\T1/cmr/m/n/10.95 The au-thors ex-tended
+ []
+
+
+Underfull \hbox (badness 1527) in paragraph at lines 321--328
+\T1/cmr/m/n/10.95 which de-pends on con-di-
+ []
+
+
+Underfull \hbox (badness 3872) in paragraph at lines 321--328
+\T1/cmr/m/n/10.95 they call ``PACE''. They
+ []
+
+
+Underfull \hbox (badness 4403) in paragraph at lines 321--328
+\T1/cmr/m/n/10.95 showed that PACE was
+ []
+
+
+Underfull \hbox (badness 1546) in paragraph at lines 321--328
+\T1/cmr/m/n/10.95 able to han-dle lon-gi-tu-di-
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 321--328
+\T1/cmr/m/n/10.95 Us-ing a sim-u-la-tion study
+ []
+
+
+Underfull \hbox (badness 2229) in paragraph at lines 321--328
+\T1/cmr/m/n/10.95 the es-ti-ma-tion of over-all
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 335.
+[6 <./Figures/Figure8.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 335.
+ (./STAT591.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 335.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 335.
+Package rerunfilecheck Info: File `STAT591.out' has not changed.
+(rerunfilecheck)             Checksum: A023C7D30A1939E9A48FB0F0002C431E;493.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 335.
+ ) 
+Here is how much of TeX's memory you used:
+ 10401 strings out of 492616
+ 143295 string characters out of 6129482
+ 263653 words of memory out of 5000000
+ 14079 multiletter control sequences out of 15000+600000
+ 20453 words of font info for 62 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 37i,14n,39p,504b,444s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+ </Users/wangfei/Library/texlive/2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm1
+0.657pk></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8
+.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.
+pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cme
+x8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
+0.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.
+pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pf
+b></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></u
+sr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
+local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
+ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/loc
+al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
+/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/tex
+live/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive
+/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2
+019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/201
+9/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb>
+Output written on STAT591.pdf (7 pages, 806439 bytes).
+PDF statistics:
+ 206 PDF objects out of 1000 (max. 8388607)
+ 166 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 500000)
+ 85 words of extra memory for PDF output out of 10000 (max. 10000000)
+

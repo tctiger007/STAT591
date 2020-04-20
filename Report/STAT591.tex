@@ -17,14 +17,16 @@
 \usepackage{epstopdf}
 \usepackage{indentfirst}
 \usepackage{bbm}
+\usepackage{wrapfig}
 
+\input{./Definitions}
 \setlength{\parindent}{3em}
 \setlength{\parskip}{0em}
 
 
-\input{./Definitions}
 
 \begin{document}
+
 \title{
   \huge STAT 591 Summary Report \\ 
   \vspace{10mm}
@@ -36,6 +38,7 @@
 \graphicspath{{./Figures/}}
 
 \maketitle
+
 
 \section{SUMMARY OF CONTRIBUTIONS}
 Functional principal components (FPC) analysis can reduce random trajectories of random curves to a set of FPC scores, and therefore is popular in longitudinal data analysis. 
@@ -52,22 +55,17 @@ Some other groups proposed that by using linear mixed models or reduced-rank mix
 But because of the complexity of the models, the asymptotic properties of the estimated components were not investigated. 
 
 Taken together, the authors proposed a simpler and more straightforward method to determine eigenfunctions, which they represent the trajectories directly using the Karhunen-Lo\`{e}ve expansion.
-Their contributions include:
-\begin{itemize}
-	\item They proposed a version of functional principal components (FPC) analysis, in which they framed the FPC scores as conditional expectations.
+Their contributions include: 1) They proposed a version of functional principal components (FPC) analysis, in which they framed the FPC scores as conditional expectations. 
 	And thus they coined this method ``principal components analysis through conditional expectation (PACE)''.
-	\item In the model, they took into account the additional measurement errors. 
-	\item They derived the asymptotic consistency properties.
-	\item They derived the asymptotic distribution needed for obtaining point-wise confidence intervals for individual trajectories. 
-\end{itemize}
+	2) In the model, they took into account the additional measurement errors. 
+	3) They derived the asymptotic consistency properties.
+	4) They derived the asymptotic distribution needed for obtaining point-wise confidence intervals for individual trajectories. 
 
 \section{INNOVATION} 
-\begin{itemize}
-	\item The proposed conditional model is designed for sparse and irregular longitudinal data. 
-	\item Under Gaussian assumptions, the authors showed that estimation of individual FPC scores are the best prediction; and under non-Gaussian assumption, they provide estimates for best linear prediction. 
-	\item One-curve-leave-out cross-validation was proposed to choose auxiliary parameters. 
-	\item Akaike information criterion (AIC) was used for faster computation to select eigenfunctions. 
-\end{itemize}
+	1) The proposed conditional model is designed for sparse and irregular longitudinal data. 
+	2) Under Gaussian assumptions, the authors showed that estimation of individual FPC scores are the best prediction; and under non-Gaussian assumption, they provide estimates for best linear prediction. 
+	3) One-curve-leave-out cross-validation was proposed to choose auxiliary parameters. 
+	4) Akaike information criterion (AIC) was used for faster computation to select eigenfunctions. 
 
 \section{FUNCTIONAL PRINCIPAL COMPONENTS ANALYSIS FOR SPARSE DATA}
 
@@ -78,8 +76,8 @@ It was assumed that G has an orthogonal expansion in terms of eigenfunction $\ph
 Assuming $Y_{ij}$ is the jth observation of the random function X($\cdot$) made at a random time $T_{ij}$ and let $\epsilon_{ij}$ be the measurement errors that are iid and are independent of random coefficients $\xi_{ik}$, where $i = 1, ..., n; j = 1, ..., N_i; k = 1, 2, ...$, the authors constructed a model: 
 \begin{align}
 	\label{eq:eq1}
-	Y_{ij} &= X_i(T_{ij}) + \epsilon_{ij}  \\
-	&= \mu(T_{ij}) + \sum_{k=1}^\infty \xi_{ik}\phi_k(T_{ij}) + \epsilon_{ij}, \; \; \;  T_{ij} \in \mathcal{T} 
+	Y_{ij} = X_i(T_{ij}) + \epsilon_{ij}  
+	= \mu(T_{ij}) + \sum_{k=1}^\infty \xi_{ik}\phi_k(T_{ij}) + \epsilon_{ij}, \; \; \;  T_{ij} \in \mathcal{T} 
 \end{align}
 where $E{\epsilon_{ij}} = 0$, var($\epsilon_{ij}$) = $\sigma^2$
 
@@ -174,35 +172,33 @@ From \nameref{simul}, the authors showed that this proposed model is also robust
 
 \subsection*{Asymptotic Confidence Bands for Individual Trajectories}
 The $(1-\alpha)$ asymptotic simultaneous confidence bands for $X_i(t)$ can be obtained:
-\begin{align}
-	\label{eq:eq8}
+$
+	%\label{eq:eq8}
 	\widehat{X}_i^K(t) \pm \sqrt{\chi^2_{K,1-\alpha}\hat{\pmb{\phi}}_{K,t}^T\widehat{\pmb{\Omega}}_K\hat{\pmb{\phi}}_{K,t}}
-\end{align}
+$, 
 where $\chi^2_{K,1-\alpha}$ is the $100(1-\alpha)$th percentile of the chi-squared distribution with K degrees of freedom. 
 
 For all linear combinations of the FPC scores, the authors proved that they could be obtained by:
-\begin{align}
-	\label{eq:eq9}
+$
+	%\label{eq:eq9}
 	\pmb{I}^T\pmb{\xi}_{K,i} \in \pmb{I}^T\hat{\pmb{\xi}}_{K,i} \pm \sqrt{\chi^2_{d,1-\alpha}\pmb{I}^T\widehat{\pmb{\Omega}}\pmb{I}}
-\end{align}
+$, 
 with approximate probability $(1-\alpha)$, where $\mathbf{I}\in \mathcal{A}$, $\mathcal{A} \subseteq {\rm I\!R}^K$ is a linear space with dimension $d\leq K$.
 
 
 \subsection*{Selection of the Number of Eigenfunctions}
 The authors proposed to choose the number of eigenfunctions K that minimizes the cross-validation score:
-\begin{align}
-	\label{eq:eq10}
-	CV(K) = \sum_{i=1}^{n}\sum_{j=1}^{N_i}\{Y_{ij}-\widehat{Y}_i^{(-i)}(T_{ij})\}^2
-\end{align} 
+$%\label{eq:eq10}
+	CV(K) = \sum_{i=1}^{n}\sum_{j=1}^{N_i}\{Y_{ij}-\widehat{Y}_i^{(-i)}(T_{ij})\}^2$,
 where $\widehat{Y}_i^{(-i)}$ is the predicted curve for the $i$th subject, computed after removing the data for this subject.
 $\widehat{Y}_i^{(-i)}(t) = \hat{\mu}^{(-i)}(t) + \sum_{k=1}^{K}\hat{\xi_{ik}}^{(-i)}(t)\hat{\phi}_{k}^{(-i)}(t)$, where $\hat{\xi}_{ik}$ can be obtained from \eqref{eq:eq5}.
 
-The authors used AIC-type criteria because they found that it was more computationally efficient. 
+The authors also used AIC-type criteria because they found that it was more computationally efficient. 
 They generated a pseudo-Gausian log-likelihood 
-\begin{align}
-	\label{eq:eq11}
+$
+	%\label{eq:eq11}
 	\widehat{L} = \sum_{i=1}^n\big\{-\frac{N_i}{2}log(2\pi) - \frac{N_i}{2}log\hat{\sigma}^2 - \frac{1}{2\hat{\sigma}^2}(\widetilde{\pmb{Y}}_i - \hat{\pmb{\mu}}_i - \sum_{k=1}^{K}\hat{\xi}_{ik}\hat{\pmb{\phi}}_{ik})^T \times (\widetilde{\pmb{Y}}_i - \hat{\pmb{\mu}}_i - \sum_{k=1}^{K}\hat{\xi}_{ik}\hat{\pmb{\phi}}_{ik}) \big\}
-\end{align} 
+$, 
 where AIC = $-\widehat{L} + K$.
 
 \section{ASYMPTOTIC PROPERTIES}
@@ -225,43 +221,113 @@ Because of the space limit of this summary, I cannot go over all the details of 
 But this is not to undermine the contributions the authors made in the paper. 
 In fact, proving the asymptotic properties of the model parameters is one of the major contributions the authors made.  
 
-	
-
-
-
 
 \section{SIMULATION STUDIES}
-100 iid normal and 100 iid non-normal samples each consisting of $n = 100 $ random trajectories were constructed. 
-The simulation conditions are: mean function $\mu(t) = t + sin(t)$, and covariance function derived from two eigenfunctions, $\phi_1(t) = -cos(\pi t/10)/\sqrt{5}$ and $\phi_2(t) = -sin(\pi t/10)/\sqrt{5}, 0 \leq t \leq 10$, where $\lambda_1 = 4, \lambda_2 = 1, \lambda_k = 0, k \geq 3$ as eigenvaluse and $\sigma^2 = 0.25$ as the variance of measurement errors $\epsilon_{ij}$ (normal with mean 0) in \eqref{eq:eq1}. 
+\label{simul}
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \centering
+    \includegraphics[width=0.48\textwidth]{Figures/Table1.png}
+   	\vspace{-0.5 cm}
+\end{wrapfigure}
+
+100 iid normal and 100 iid non-normal samples each consisting of $n = 100$ random trajectories were constructed. 
+The simulation conditions are: mean function $\mu(t) = t + sin(t)$, and covariance function derived from two eigenfunctions, $\phi_1(t) = -cos(\pi t/10)/\sqrt{5}$ and $\phi_2(t) = -sin(\pi t/10)/\sqrt{5}, 0 \leq t \leq 10$, where $\lambda_1 = 4, \lambda_2 = 1, \lambda_k = 0, k \geq 3$ as eigenvalue and $\sigma^2 = 0.25$ as the variance of measurement errors $\epsilon_{ij}$ (normal with mean 0) in \eqref{eq:eq1}. 
 For the smoothing steps, univariate and bivariate Epanechnikov kernel functions were used: $\kappa_1 (x) = 3/4 (1 - x^2) \mathbbm{1}_{[-1, 1]} (x) $ and $\kappa_2 (x, y) = 9/16 (1 - x^2)(1 - y^2) \mathbbm{1}_{[-1, 1]} (x) \mathbbm{1}_{[-1, 1]} (y)$ where $\mathbbm{1}_A (x) = 1$ if $x \in A$ and 0 otherwise.  
 For the 100 normal samples, the FPC scores $\xi_{ik}$ were generated from $N(0,\lambda_k)$, whereas the $\xi_{ik}$ the nonnormal samples were generated from a mixture of two normals, $N(\sqrt{\lambda_k/2}, \lambda_k/2) $ and $ N(-\sqrt{\lambda_k/2}, \lambda_k/2)$ with probability $(1/2, 1/2)$.
 
-The performance was evaulated with mean square error (MSE) and average squared error (ASE score). 
+The performance was evaluated with mean square error (MSE) and average squared error (ASE score). 
 $MSE = \sum_{i = 1}^{n} \int_{0}^{10} \left\{X_i(t) - \widehat{X}_i^K(t) \right\}^2 dt/n $; 
 $ASE(\xi_k) = \sum_{i = 1}^n (\hat{\xi}_{ik} - \xi_{ik})^2/n$, k = 1, 2. 
 
-\label{simul}
-\begin{figure}[h]
-	\includegraphics[width = 5 in]{Figures/Table1.png}
-	\centering
-\end{figure}
-
 \section{APPLICATIONS}
 
+\noindent \textbf{Objectives:} Using PACE, the authors tried to show that they were able 1) to estimate the overall trend over time, 2) to study subject-specific variation patterns, 3) to uncover the dominant modes of variation, and 4) to recover individual trajectories from sparse measurements.
+
 \subsection*{Longitudinal CD4 Counts}
-Cohort of the study: 283 homosexual men who became HIV-positive between 1984 and 1991. 
+\noindent \underline{Dateset:} A cohort of 283 homosexual men who became HIV-positive between 1984 and 1991. 
 CD4 counts and CD4 percentage, which are markers for the health status of HIV infected individuals, and other clinical tests were recorded.
 All individuals were scheduled to have clinical measurements at their semiannual visits. 
 However, many individuals missed their visits and the HIV infections occurred at different time points randomly. 
 Therefore, the data are sparse and the repeated measurements were irregular. 
 
-\begin{figure}[h]
-	\includegraphics[width = 6 in]{Figures/Figure1.png}
-	\centering
-\end{figure}
+\begin{wrapfigure}{r}{0.65\textwidth}
+  \vspace{-1 cm}
+  \centering
+    \includegraphics[width=0.64\textwidth]{Figures/Figure1.png}
+   	\vspace{-0.7 cm}
+   	\caption{(a) Individual trajectories of CD4 percentage in 283 individuals. (b) Smooth estimate of the mean function. (c) Smooth estimate of the variance function for CD4 counts. (d) Smooth estimate of correlation function. }
+   	\vspace{-0.3 cm}
+	\label{fig:fig1}
+\end{wrapfigure}
+
+\noindent \underline{Observations:} 1) The estimate of mean function was able to be build from individual's trajectory. 
+From Figure ~\ref{fig:fig1} (b), we can see that the CD4 cell counts are decreasing over a five year course. 
+
+\noindent 2) Variance is non-stationary (decreases at early times and then increase again; see Figure ~\ref{fig:fig1} (c)). 
+Correlations between same subjects are strong, but the correlations between early and late CD counts dies off (see Figure ~\ref{fig:fig1} (d)). 
+
+\noindent 3) $K = 3$ was chosen from both one-curve-leave-out cross-validation and AIC, and the resulting three eigenfunctions account for 76.9\%, 12.3\%, and 8.1\% of the total variation. 
+Most of the variability is thus in the direction of overall CD4 percentage level.  
+
+\begin{wrapfigure}{l}{0.6\textwidth}
+  \centering
+    \includegraphics[width=0.59\textwidth]{Figures/Figure5.png}
+   	\vspace{-0.5 cm}
+   	\caption{Observations (circles), predicted (solid lines) trajectories, and 95\% pointwise (dashed lines) and simultaneous (dotted lines) bands for four randomly chosen individuals, for the CD4 count data.}
+	\label{fig:fig5}
+	\vspace{-0.7 cm}
+\end{wrapfigure}
+
+\noindent 4) The predicted curves and 95\% pointwise and simultaneous confidence bands were shown in Figure ~\ref{fig:fig5}.
+It shows that even when the observations per subject is sparse, PACE was still able to effectively recover the trajectories. 
+An extreme case was exemplified by the left bottom subfigure, where only one observation was used. 
+They showed that they were able to generate reasonably decent trajectory.
 
 \subsection*{Yeast Cell Cycle Gene Expression Profiles}
+\noindent \underline{Dateset:} Another dataset the authors used to benchmark their method was the yeast cell cycle data from Spellman et al. %%%%%%\cite{}
+The training set include 6178 genes with each gene expression profile consists of 18 data points, measured every 7 minutes in a span of 0 to 119 minutes. 
+The authors artificially induced sparsity to the data by randomly selecting $N_i \; \in (1 - 6)$ with equal probability, and then randomly select from the 18 recorded gene expression measurements (the median of the number of observations per gene expression profile is 3).  %; see Figure ~\ref{fig:fig6}). 
 
+% \begin{wrapfigure}{l}{0.6\textwidth} 
+% 	\centering
+% 	    \includegraphics[width=0.59\textwidth]{Figures/Figure7.png}
+% 	   	\vspace{-0.5 cm}
+% 	   	\caption{Smooth surface estimates $\widehat{G}$ of the covariance functions from the complete data (a) and from the sparsified data (b).}
+% 		\label{fig:fig7}
+% \end{wrapfigure}
+
+\noindent \underline{Observations:} 1) The mean function estimates for sparse and complete data are close to each other and show periodic features (not shown here).
+
+\noindent 2) The covariance function obtained from complete and ``sparsified'' data set are similar to each other and exhibit periodic features. % (Figure ~\ref{fig:fig7}). 
+
+\noindent 3) The first eigenfunctions were able to approximate the expression profiles (Figure ~\ref{fig:fig8}), which explain approximately 75\% of the total variation.
+
+\noindent 4) 95\% confidence bands were generated using PACE. 
+The predictions obtained from the sparse data are similar to those constructed from the complete data (Figure ~\ref{fig:fig8}).
+
+All of these observations demonstrate that the PACE method effectively recover entire individual trajectories from a proportion of the data. 
+
+\begin{wrapfigure}{r}{0.7\textwidth} 
+	\centering
+		\vspace{-1 cm}
+	    \includegraphics[width=0.69\textwidth]{Figures/Figure8.png}
+	   	\vspace{-0.5 cm}
+	   	\caption{Smooth estimates of the mean function (a), the first (b) and second (c) eigenfunctions, obtained from sparse (solid lines) and complete (dashed lines) data.}
+	   	\vspace{-0.5 cm}
+		\label{fig:fig8}
+\end{wrapfigure}
+
+\section{CONCLUSIONS}
+The authors extended the traditional FPC analysis and developed a method which depends on conditional expectations, which they call ``PACE''.
+They showed that PACE was able to handle longitudinal data with irregular measurements and sparse data. 
+Using a simulation study and two real-life datasets, they showed that not only PACE effectively recovered the estimation of overall trend of random trajectories, but also allow them to study the subject-specific variation patterns. 
+Furthermore, using real datasets, they showed that PACE was able to help impute missing data in longitudinal studies. 
+By replacing the integrals by conditional exceptions when estimating FPC scores, PACE improves the traditional FPC analysis under both dense and regular designs. 
+This conditional expectation step can be interpreted as shrinkage of the random effects toward 0.  
+Overall, PACE shows promise in applications of both longitudinal designs. 
+
+
+\section{POSSIBLE TOPICS/QUESTIONS FOR FUTURE RESEARCH}
 
 
 
