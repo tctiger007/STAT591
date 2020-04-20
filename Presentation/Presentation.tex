@@ -2,6 +2,9 @@
 \usepackage{outlines}
 \usepackage{amsmath}
 \usepackage[T1]{fontenc}
+\usepackage{amssymb}
+%\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
 
 \title{\huge Functional Data Analysis for Sparse Longitudinal Data}
 \subtitle{\large Fang YAO, Hans-Georg M\"{u}LLER, and Jane-Ling WANG \\
@@ -13,6 +16,7 @@
 
 %\usetheme{lucid}
 \begin{document}
+\graphicspath{{../Report/Figures/}}
 	\frame {
 		\titlepage
 	}
@@ -130,23 +134,73 @@
 	}
 	\frame{
 	    \frametitle{Methods: Functional Principal Components Analysis Through Conditional Expectation}
-	    This is a paragraph.
-	}
-	\frame{
-	    \frametitle{Methods: Asymptotic Confidence Bands for Individual Trajectories}
-	    This is a paragraph.
-	}
-	\frame{
-		\frametitle{Methods: Selection of the Number of Eigenfunctions}
+	    \begin{itemize}
+			\item Under the assumption that $\xi_{ik}$ and $\epsilon_{ij}$ are jointly Gaussian:
+			\begin{align}
+				\label{eq:eq5}
+				\hat{\xi}_{ik} = \widehat{E}{[\xi_{ik}|\widetilde{\pmb{Y}}_i]} = \hat{\lambda}_k\hat{\pmb{\phi}}_{ik}^T\hat{\pmb{\Sigma}}_{\pmb{Y}_i}^{-1}(\tilde{\pmb{Y}}_i - \hat{\pmb{\mu}}_i)
+			\end{align}
+			where $(\hat{\pmb{\Sigma}}_{\pmb{Y}_i})_{j,l} = \hat{G}(T_{ij}, T_{il}) + \sigma^2\delta_{jl}$ is the $(j,l)$th element of $\hat{\pmb{\Sigma}}_{\pmb{Y}_i}$. 
+			Under the Gaussian assumption, the $\tilde{\xi}_{ik} = E[\xi_{ik}|\widetilde{\pmb{Y}}_i]$ is the best prediction of the FPC score. 
+			\item The prediction for the trajectory $X_i(t)$ for the $i$th subject using the first K eigenfunctions is then:
+			\begin{align}
+				\label{eq:eq6}
+				\widehat{X_i}^K(t) = \hat{\mu}(t)+\sum_{k=1}^{K}\hat{\hat{\xi}}_{ik}\hat{\phi}_k(t)
+			\end{align}
+			\item In simulation result, the authors showed that this proposed model is also robust when the Gaussian assumption does not hold. 
+		\end{itemize}
 
 	}
 	\frame{
+	    \frametitle{Methods: Asymptotic Confidence Bands for Individual Trajectories}
+	    \begin{itemize}
+		    \item The $(1-\alpha)$ asymptotic simultaneous confidence bands for $X_i(t)$ can be obtained:
+			\begin{align}
+				\label{eq:eq8}
+				\widehat{X}_i^K(t) \pm \sqrt{\chi^2_{K,1-\alpha}\hat{\pmb{\phi}}_{K,t}^T\widehat{\pmb{\Omega}}_K\hat{\pmb{\phi}}_{K,t}}
+			\end{align}
+			where $\chi^2_{K,1-\alpha}$ is the $100(1-\alpha)$th percentile of the chi-squared distribution with K degrees of freedom. 
+
+			\item For all linear combinations of the FPC scores, the authors proved that they could be obtained by:
+			\begin{align}
+				\label{eq:eq9}
+				\pmb{I}^T\pmb{\xi}_{K,i} \in \pmb{I}^T\hat{\pmb{\xi}}_{K,i} \pm \sqrt{\chi^2_{d,1-\alpha}\pmb{I}^T\widehat{\pmb{\Omega}}\pmb{I}}
+			\end{align}
+			with approximate probability $(1-\alpha)$, where $\mathbf{I}\in \mathcal{A}$, $\mathcal{A} \subseteq {\rm I\!R}^K$ is a linear space with dimension $d\leq K$.
+		\end{itemize}
+	}
+	\frame{
+		\frametitle{Methods: Selection of the Number of Eigenfunctions}
+		\begin{itemize}
+			\item Choose the number of eigenfunctions K that minimizes the cross-validation score:
+			\begin{align}
+				\label{eq:eq10}
+				CV(K) = \sum_{i=1}^{n}\sum_{j=1}^{N_i}\{Y_{ij}-\widehat{Y}_i^{(-i)}(T_{ij})\}^2
+			\end{align} 
+			where $\widehat{Y}_i^{(-i)}(t) = \hat{\mu}^{(-i)}(t) + \sum_{k=1}^{K}\hat{\xi_{ik}}^{(-i)}(t)\hat{\phi}_{k}^{(-i)}(t)$. 
+			%, where $\hat{\xi}_{ik}$ can be obtained from \eqref{eq:eq5}.
+
+			\item AIC-type criteria was found to be more computationally efficient. 
+			A pseudo-Gausian log-likelihood was generated:
+			\begin{flalign}
+			&\begin{aligned}
+				& \widehat{L} = \sum_{i=1}^n\big\{-\frac{N_i}{2}log(2\pi) - \frac{N_i}{2}log\hat{\sigma}^2 -  \\ 
+				&\frac{1}{2\hat{\sigma}^2}(\widetilde{\pmb{Y}}_i - \hat{\pmb{\mu}}_i - \sum_{k=1}^{K}\hat{\xi}_{ik}\hat{\pmb{\phi}}_{ik})^T \times (\widetilde{\pmb{Y}}_i - \hat{\pmb{\mu}}_i - \sum_{k=1}^{K}\hat{\xi}_{ik}\hat{\pmb{\phi}}_{ik}) \big\} \label{eq:eq11}
+			\end{aligned}&&
+			\end{flalign}
+			where AIC = $-\widehat{L} + K$.
+		\end{itemize}
+	}
+	\frame{
 	    \frametitle{Asymptotic Properties}
-	    This is a paragraph.
+	   One major contribution of this paper was that the authors have proved the consistency of the estimated FPC scores $\hat{\xi}_{ik}$ in \eqref{eq:eq5} for the true conditional expectations $\xi_{ik}$. 
 	}
 	\frame{
 	    \frametitle{Simulation Studies}
-	    This is a paragraph.
+	    \begin{figure}[h]
+			\includegraphics[width = 4 in]{Table1.png}
+			\centering
+		\end{figure}
 	}
 	\frame{
 	    \frametitle{Applications}
