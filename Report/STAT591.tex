@@ -15,6 +15,12 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{epstopdf}
+\usepackage{indentfirst}
+\usepackage{bbm}
+
+\setlength{\parindent}{3em}
+\setlength{\parskip}{0em}
+
 
 \input{./Definitions}
 
@@ -201,17 +207,58 @@ where AIC = $-\widehat{L} + K$.
 
 \section{ASYMPTOTIC PROPERTIES}
 One major contribution of this paper was that the authors have proved the consistency of the estimated FPC scores $\hat{\xi}_{ik}$ in \eqref{eq:eq5} for the true conditional expectations $\xi_{ik}$. 
+Here are several consistency results they proved 
+$\underset{t \in \mathcal{T}}{sup}|\hat{\mu}(t) - \mu(t)| = O_p \left(\frac{1}{\sqrt{n}h_{\mu}} \right)$, and $\underset{{t,s} \in \mathcal{T}}{sup}|\hat{G}(s,t) - G(s,t)| = O_p \left(\frac{1}{\sqrt{n}h_{G}^2} \right)$, where $h_{\mu}$, $h_G$ and $h_V$ are bandwidths for estimating $\hat{\mu}$, $\widehat{G}$, $\widehat{V}$ under some conditions. 
+From these two asymptotic results, they further obtained the consistency of $\hat{\sigma}^2$: $|\hat{\sigma}^2 - \sigma^2| = O_p\left(\frac{1}{\sqrt{n}} \left(\frac{1}{h_G^2} + \frac{1}{h_V} \right) \right)$.
+
+Under certain conditions (not shown here), the authors also proved that:
+$|\hat{\lambda}_k - \lambda_k| = O_p \left(\frac{1}{\sqrt{n}h_{G}^2} \right) $,
+$||\hat{\phi}_k - \phi_k||_H = O_p \left(\frac{1}{\sqrt{n}h_{G}^2} \right), k \in \mathcal{T}^{'}$, and $\underset{{t} \in \mathcal{T}}{sup}|\hat{\phi_k}(t) - \phi_k(t)| = O_p \left(\frac{1}{\sqrt{n}h_{G}^2} \right), k \in \mathcal{T}^{'}$. 
+
+Under Gaussian assumption, they also proved that:
+$\underset{n \rightarrow \infty}{lim} \hat{\xi}_{ik} = \tilde{\xi}_{ik}$ and for all $t \in \mathcal{T}$, $\underset{K \rightarrow \infty}{lim}\underset{n \rightarrow \infty}{lim} \widehat{X}_i^K(t) = \widetilde{X}_i(t)$ in probability. 
+
+Furthermore, they showed $\underset{K \rightarrow \infty}{lim}\underset{n \rightarrow \infty}{lim} P\left\{\frac{\widehat{X}_i^K(t) - X_i(t)}{\sqrt{\omega_K(t,t)}} \leq x \right\} = \Phi(x) $, where $\Phi(x) $ is the standard Gaussian cdf. 
+$\underset{n \rightarrow \infty}{lim} P\left\{ \underset{t \in \mathcal{T}}{sup} \frac{|\widehat{X}_i^K(t) - X_i^K(t)|}{\sqrt{\omega_K(t,t)}} \leq \sqrt{\chi_{K, 1-\alpha}^2} \right \} \geq 1-\alpha $, where $\chi_{K, 1-\alpha}^2$ is the $1-\alpha$th percentile of the chi-squared distribution with K degrees of freedom. 
+
+Because of the space limit of this summary, I cannot go over all the details of the assumptions the authors used to prove the above theories, nor can I list all the consistency properties the authors proved. 
+But this is not to undermine the contributions the authors made in the paper. 
+In fact, proving the asymptotic properties of the model parameters is one of the major contributions the authors made.  
+
+	
+
+
+
 
 \section{SIMULATION STUDIES}
+100 iid normal and 100 iid non-normal samples each consisting of $n = 100 $ random trajectories were constructed. 
+The simulation conditions are: mean function $\mu(t) = t + sin(t)$, and covariance function derived from two eigenfunctions, $\phi_1(t) = -cos(\pi t/10)/\sqrt{5}$ and $\phi_2(t) = -sin(\pi t/10)/\sqrt{5}, 0 \leq t \leq 10$, where $\lambda_1 = 4, \lambda_2 = 1, \lambda_k = 0, k \geq 3$ as eigenvaluse and $\sigma^2 = 0.25$ as the variance of measurement errors $\epsilon_{ij}$ (normal with mean 0) in \eqref{eq:eq1}. 
+For the smoothing steps, univariate and bivariate Epanechnikov kernel functions were used: $\kappa_1 (x) = 3/4 (1 - x^2) \mathbbm{1}_{[-1, 1]} (x) $ and $\kappa_2 (x, y) = 9/16 (1 - x^2)(1 - y^2) \mathbbm{1}_{[-1, 1]} (x) \mathbbm{1}_{[-1, 1]} (y)$ where $\mathbbm{1}_A (x) = 1$ if $x \in A$ and 0 otherwise.  
+For the 100 normal samples, the FPC scores $\xi_{ik}$ were generated from $N(0,\lambda_k)$, whereas the $\xi_{ik}$ the nonnormal samples were generated from a mixture of two normals, $N(\sqrt{\lambda_k/2}, \lambda_k/2) $ and $ N(-\sqrt{\lambda_k/2}, \lambda_k/2)$ with probability $(1/2, 1/2)$.
+
+The performance was evaulated with mean square error (MSE) and average squared error (ASE score). 
+$MSE = \sum_{i = 1}^{n} \int_{0}^{10} \left\{X_i(t) - \widehat{X}_i^K(t) \right\}^2 dt/n $; 
+$ASE(\xi_k) = \sum_{i = 1}^n (\hat{\xi}_{ik} - \xi_{ik})^2/n$, k = 1, 2. 
+
 \label{simul}
 \begin{figure}[h]
-	\includegraphics[width = 7 in]{Figures/Table1.png}
+	\includegraphics[width = 5 in]{Figures/Table1.png}
 	\centering
 \end{figure}
 
 \section{APPLICATIONS}
 
 \subsection*{Longitudinal CD4 Counts}
+Cohort of the study: 283 homosexual men who became HIV-positive between 1984 and 1991. 
+CD4 counts and CD4 percentage, which are markers for the health status of HIV infected individuals, and other clinical tests were recorded.
+All individuals were scheduled to have clinical measurements at their semiannual visits. 
+However, many individuals missed their visits and the HIV infections occurred at different time points randomly. 
+Therefore, the data are sparse and the repeated measurements were irregular. 
+
+\begin{figure}[h]
+	\includegraphics[width = 6 in]{Figures/Figure1.png}
+	\centering
+\end{figure}
 
 \subsection*{Yeast Cell Cycle Gene Expression Profiles}
 

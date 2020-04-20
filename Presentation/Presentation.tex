@@ -193,7 +193,15 @@
 	}
 	\frame{
 	    \frametitle{Asymptotic Properties}
-	   One major contribution of this paper was that the authors have proved the consistency of the estimated FPC scores $\hat{\xi}_{ik}$ in \eqref{eq:eq5} for the true conditional expectations $\xi_{ik}$. 
+	   	\begin{itemize}
+		   	\item $\underset{t \in \mathcal{T}}{sup}|\hat{\mu}(t) - \mu(t)| = O_p \left(\frac{1}{\sqrt{n}h_{\mu}} \right)$ 
+		   	\item $\underset{{t,s} \in \mathcal{T}}{sup}|\hat{G}(s,t) - G(s,t)| = O_p \left(\frac{1}{\sqrt{n}h_{G}^2} \right), |\hat{\lambda}_k - \lambda_k| = O_p \left(\frac{1}{\sqrt{n}h_{G}^2} \right) $, 
+		   	$||\hat{\phi}_k - \phi_k||_H = O_p \left(\frac{1}{\sqrt{n}h_{G}^2} \right), k \in \mathcal{T}^{'}$
+		   	\item $\underset{{t} \in \mathcal{T}}{sup}|\hat{\phi_k}(t) - \phi_k(t)| = O_p \left(\frac{1}{\sqrt{n}h_{G}^2} \right), k \in \mathcal{T}^{'}$ 
+		   	\item $\underset{n \rightarrow \infty}{lim} \hat{\xi}_{ik} = \tilde{\xi}_{ik}, \underset{K \rightarrow \infty}{lim}\underset{n \rightarrow \infty}{lim} \widehat{X}_i^K(t) = \widetilde{X}_i(t) \; \; \forall t \in \mathcal{T}$ in probability. 
+			\item $\underset{K \rightarrow \infty}{lim}\underset{n \rightarrow \infty}{lim} P\left\{\frac{\widehat{X}_i^K(t) - X_i(t)}{\sqrt{\omega_K(t,t)}} \leq x \right\} = \Phi(x) $, where $\Phi(x) $ is the standard Gaussian cdf.
+			\item $\underset{n \rightarrow \infty}{lim} P\left\{ \underset{t \in \mathcal{T}}{sup} \frac{|\widehat{X}_i^K(t) - X_i^K(t)|}{\sqrt{\omega_K(t,t)}} \leq \sqrt{\chi_{K, 1-\alpha}^2} \right \} \geq 1-\alpha $, where $\chi_{K, 1-\alpha}^2$ is the $1-\alpha$th percentile of the chi-squared distribution with K degrees of freedom. 
+		\end{itemize}
 	}
 	\frame{
 	    \frametitle{Simulation Studies}
@@ -201,6 +209,8 @@
 			\includegraphics[width = 4 in]{Table1.png}
 			\centering
 		\end{figure}
+		\[MSE = \sum_{i = 1}^{n} \int_{0}^{10} \left\{X_i(t) - \widehat{X}_i^K(t) \right\}^2 dt/n \]
+		\[ASE(\xi_k) = \sum_{i = 1}^n (\hat{\xi}_{ik} - \xi_{ik})^2/n \; \; k = 1, 2.\] 
 	}
 	\frame{
 	    \frametitle{Applications}
