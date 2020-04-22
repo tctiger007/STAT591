@@ -1,5 +1,5 @@
 \documentclass[11pt]{report}
-\usepackage{./assignment}
+\usepackage{./assignment2}
 \usepackage{slashbox}
 \usepackage{graphicx}
 \usepackage{subfigure}
@@ -18,10 +18,18 @@
 \usepackage{indentfirst}
 \usepackage{bbm}
 \usepackage{wrapfig}
+\usepackage{biblatex}
+
+\bibliography{references} 
+%\bibliographystyle{unsrt}
+
+
 
 \input{./Definitions}
 \setlength{\parindent}{3em}
 \setlength{\parskip}{0em}
+
+
 
 
 
@@ -39,6 +47,7 @@
 
 \maketitle
 
+%\clearpage
 
 \section{SUMMARY OF CONTRIBUTIONS}
 Functional principal components (FPC) analysis can reduce random trajectories of random curves to a set of FPC scores, and therefore is popular in longitudinal data analysis. 
@@ -48,10 +57,10 @@ In longitudinal data analysis, there are extensive research of FPC analysis on r
 However, it is not uncommon that repeated measurements are infrequent, and these measurements are irregularly spaced per subject. 
 In this situation, FPC analysis has limitations because of the sparse repeated measurements. 
 The authors summarized a few available models that can be applied to irregular grid of time measurements. 
-For example, kernel-based functional principal components analysis for repeated measurements with irregular time points was proposed by Staniswalis and Lee [refs]. %%%%%\cite{}. 
-Their method was further studied by other groups [refs]; %%%%%\\cite{}; 
+For example, kernel-based functional principal components analysis for repeated measurements with irregular time points was proposed by Staniswalis and Lee \cite{Staniswalis1998}. 
+Their method was further studied by other groups \cite{Besse1997, Boularan1994}; 
 however, when the measurement time points vary widely across individuals and the measurements per subject is very sparse (i.e., one or two measurements per subject), the FPC scores cannot be approximated by the usual integration method. 
-Some other groups proposed that by using linear mixed models or reduced-rank mixed effects models, they could use B-splines to model the individual curves with random coefficients [refs]. %%%%%\cite{}.
+Some other groups proposed that by using linear mixed models or reduced-rank mixed effects models, they could use B-splines to model the individual curves with random coefficients \cite{Journal2019, Rice2001, Hastie2017, James2003}.
 But because of the complexity of the models, the asymptotic properties of the estimated components were not investigated. 
 
 Taken together, the authors proposed a simpler and more straightforward method to determine eigenfunctions, which they represent the trajectories directly using the Karhunen-Lo\`{e}ve expansion.
@@ -244,7 +253,7 @@ $ASE(\xi_k) = \sum_{i = 1}^n (\hat{\xi}_{ik} - \xi_{ik})^2/n$, k = 1, 2.
 \noindent \textbf{Objectives:} Using PACE, the authors tried to show that they were able 1) to estimate the overall trend over time, 2) to study subject-specific variation patterns, 3) to uncover the dominant modes of variation, and 4) to recover individual trajectories from sparse measurements.
 
 \subsection*{Longitudinal CD4 Counts}
-\noindent \underline{Dateset:} A cohort of 283 homosexual men who became HIV-positive between 1984 and 1991. 
+\noindent \underline{Dateset:} A cohort of 283 homosexual men who became HIV-positive between 1984 and 1991 \cite{Kaslow1987}. 
 CD4 counts and CD4 percentage, which are markers for the health status of HIV infected individuals, and other clinical tests were recorded.
 All individuals were scheduled to have clinical measurements at their semiannual visits. 
 However, many individuals missed their visits and the HIV infections occurred at different time points randomly. 
@@ -284,7 +293,7 @@ An extreme case was exemplified by the left bottom subfigure, where only one obs
 They showed that they were able to generate reasonably decent trajectory.
 
 \subsection*{Yeast Cell Cycle Gene Expression Profiles}
-\noindent \underline{Dateset:} Another dataset the authors used to benchmark their method was the yeast cell cycle data from Spellman et al. %%%%%%\cite{}
+\noindent \underline{Dateset:} Another dataset the authors used to benchmark their method was the yeast cell cycle data from Spellman et al \cite{Spellman1998}. 
 The training set include 6178 genes with each gene expression profile consists of 18 data points, measured every 7 minutes in a span of 0 to 119 minutes. 
 The authors artificially induced sparsity to the data by randomly selecting $N_i \; \in (1 - 6)$ with equal probability, and then randomly select from the 18 recorded gene expression measurements (the median of the number of observations per gene expression profile is 3).  %; see Figure ~\ref{fig:fig6}). 
 
@@ -307,10 +316,10 @@ The predictions obtained from the sparse data are similar to those constructed f
 
 All of these observations demonstrate that the PACE method effectively recover entire individual trajectories from a proportion of the data. 
 
-\begin{wrapfigure}{r}{0.7\textwidth} 
+\begin{wrapfigure}{r}{0.65\textwidth} 
 	\centering
 		\vspace{-1 cm}
-	    \includegraphics[width=0.69\textwidth]{Figures/Figure8.png}
+	    \includegraphics[width=0.64\textwidth]{Figures/Figure8.png}
 	   	\vspace{-0.5 cm}
 	   	\caption{Smooth estimates of the mean function (a), the first (b) and second (c) eigenfunctions, obtained from sparse (solid lines) and complete (dashed lines) data.}
 	   	\vspace{-0.5 cm}
@@ -327,8 +336,21 @@ This conditional expectation step can be interpreted as shrinkage of the random 
 Overall, PACE shows promise in applications of both longitudinal designs. 
 
 
-\section{POSSIBLE TOPICS/QUESTIONS FOR FUTURE RESEARCH}
+\section{FUTURE RESEARCH}
+To make the model more flexible, the authors could investigate extending ``PACE''to additive models. 
+The challenge of additive model in functional study could be that the predictor set is not countable and the additive models may require many additive components. 
+But because this paper was published a while ago, the authors have done some research on fitting functional additive models \cite{Muller2008}. 
+Another area the authors can investigate is how to classify the functional data. 
+In practice, it's very often that we need to compare two or more groups of longitudinal data. 
+% Another possible research area could be investigating how to estimate the functional gradients of the response with respect to the predictor functions, which would provide quantitative measures of 
+% G: $\pmb{z}\sim p_{\pmb{z}} \longmapsto $ Image Space (to generate realistic images)
 
+% \vspace{3mm}
+% D: $h\sim p_{data} \longmapsto $ Likelihood (to play an adversarial role)
+
+\newpage
+\section*{References}
+\printbibliography    
 
 
 
