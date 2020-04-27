@@ -18,10 +18,10 @@
 \usepackage{indentfirst}
 \usepackage{bbm}
 \usepackage{wrapfig}
-\usepackage{biblatex}
 
-\bibliography{references} 
-%\bibliographystyle{unsrt}
+%\usepackage{biblatex}
+
+
 
 
 
@@ -30,7 +30,156 @@
 \setlength{\parskip}{0em}
 
 
+\begin{filecontents*}{ref.bib}
+@article{Muller2008,
+abstract = {In commonly used functional regression models, the regression of a scalar or functional response on the functional predictor is assumed to be linear. This means that the response is a linear function of the functional principal component scores of the predictor process. We relax the linearity assumption and propose to replace it by an additive structure, leading to a more widely applicable and much more flexible framework for functional regression models. The proposed functional additive regression models are suitable for both scalar and functional responses. The regularization needed for effective estimation of the regression parameter function is implemented through a projection on the eigenbasis of the covariance operator of the functional components in the model. The use of functional principal components in an additive rather than linear way leads to substantial broadening of the scope of functional regression models and emerges as a natural approach, because the uncorrelatedness of the functional principal components is shown to lead to a straightforward implementation of the functional additive model, based solely on a sequence of one-dimensional smoothing steps and without the need for backfitting. This facilitates the theoretical analysis, and we establish the asymptotic consistency of the estimates of the components of the functional additive model. We illustrate the empirical performance of the proposed modeling framework and estimation methods through simulation studies and in applications to gene expression time course data. {\textcopyright} 2008 American Statistical Association.},
+author = {M{\"{u}}ller, Hans Georg and Yao, Fang},
+doi = {10.1198/016214508000000751},
+file = {:Users/wangfei/Documents/GitHub/STAT591/References/Functional Additive Models.pdf:pdf},
+issn = {01621459},
+journal = {Journal of the American Statistical Association},
+keywords = {Additive model,Asymptotics,Functional data analysis,Functional regression,Linear model,Principal components,Smoothing,Stochastic processes},
+number = {484},
+pages = {1534--1544},
+title = {{Functional additive models}},
+volume = {103},
+year = {2008}
+}
+@article{Rice2001,
+author = {Rice, John A and Wu, Colin O.},
+file = {:Users/wangfei/Documents/GitHub/STAT591/References/j.0006-341X.2001.00253.x.pdf:pdf},
+journal = {Biometrics},
+keywords = {metrics},
+number = {March},
+pages = {253--259},
+title = {{Unequally Sampled Noisy Curves}},
+volume = {57},
+year = {2001}
+}
+@article{Besse1997,
+author = {Besse, Philippe C. and Herve, Cardot and Frederic, Ferraty},
+journal = {Computational Statistics {\&} Data Analysis},
+number = {3},
+pages = {255--270},
+title = {{Simultaneous nonparametric regression of unbalanced longitudinal data}},
+volume = {24},
+year = {1997}
+}
+@article{Kaslow1987,
+author = {Kaslow, Richard A and Ostrow, David G. and Detels, Roger and Phair, John P. and Polk, B Frank and {Charles R. Rinaldo}, Jr.},
+journal = {Journal of Epidemiology},
+number = {2},
+pages = {310--318},
+title = {{The multicenter AIDS cohort study: rationale, organization, and selected characteristics of the participants}},
+volume = {126},
+year = {1987}
+}
+@article{Spellman1998,
+abstract = {We sought to create a comprehensive catalog of yeast genes whose transcript levels vary periodically within the cell cycle. To this end, we used DNA microarrays and samples from yeast cultures synchronized by three independent methods: $\alpha$ factor arrest, elutriation, and arrest of a cdc15 temperature-sensitive mutant. Using periodicity and correlation algorithms, we identified 800 genes that meet an objective minimum criterion for cell cycle regulation. In separate experiments, designed to examine the effects of inducing either the G1 cyclin Cln3p or the B-type cyclin Clb2p, we found that the mRNA levels of more than half of these 800 genes respond to one or both of these cyclins. Furthermore, we analyzed our set of cell cycle-regulated genes for known and new promoter elements and show that several known elements (or variations thereof) contain information predictive of cell cycle regulation. A full description and complete data sets are available at http://cellcycle-www.stanford.edu.},
+author = {Spellman, Paul T. and Sherlock, Gavin and Zhang, Michael Q. and Iyer, Vishwanath R. and Anders, Kirk and Eisen, Michael B. and Brown, Patrick O. and Botstein, David and Futcher, Bruce},
+doi = {10.1091/mbc.9.12.3273},
+file = {:Users/wangfei/Documents/GitHub/STAT591/References/mbc.9.12.3273.pdf:pdf},
+issn = {10591524},
+journal = {Molecular Biology of the Cell},
+number = {12},
+pages = {3273--3297},
+pmid = {9843569},
+title = {{Comprehensive identification of cell cycle-regulated genes of the yeast Saccharomyces cerevisiae by microarray hybridization}},
+volume = {9},
+year = {1998}
+}
+@article{Staniswalis1998,
+abstract = {Nonparametric methods are developed for estimating the dose effect when a response consists of correlated observations over time measured in a dose–response experiment. The methods can also be applied to data collected from a completely randomized design experiment. Methods are developed for the detection and description of the effects of dose, time, and their interaction. The methods allow for individual variation in the timing and number of observations. A generalization allowing baseline covariates to be incorporated is addressed. These results may be used in an exploratory fashion in the process of building a random-effects model for longitudinal data. {\textcopyright} 1998 Taylor {\&} Francis Group, LLC.},
+author = {Staniswalis, Joan G. and Lee, J. Jack},
+doi = {10.1080/01621459.1998.10473801},
+file = {:Users/wangfei/Documents/GitHub/STAT591/References/2670055.pdf:pdf},
+issn = {1537274X},
+journal = {Journal of the American Statistical Association},
+keywords = {Growth curves,Kernel estimator,Principal component analysis,Repeated measures},
+number = {444},
+pages = {1403--1418},
+title = {{Nonparametric regression analysis of longitudinal data}},
+volume = {93},
+year = {1998}
+}
+@article{James2003,
+abstract = {We develop a flexible model-based procedure for clustering functional data. The technique can be applied to all types of curve data but is particularly useful when individuals are observed at a sparse set of time points. In addition to producing final cluster assignments, the procedure generates predictions and confidence intervals for missing portions of curves. Our approach also provides many useful tools for evaluating the resulting models. Clustering can be assessed visually via low-dimensional representations of the curves, and the regions of greatest separation between clusters can be determined using a discriminant function. Finally, we extend the model to handle multiple functional and finite-dimensional covariates and show how it can be applied to standard finite-dimensional clustering problems involving missing data.},
+author = {James, Gareth M. and Sugar, Catherine A.},
+doi = {10.1198/016214503000189},
+file = {:Users/wangfei/Documents/GitHub/STAT591/References/Clustering for Sparsely Sampled Functional Data.pdf:pdf},
+issn = {01621459},
+journal = {Journal of the American Statistical Association},
+keywords = {Curve estimation,Discriminant functions,Functional clustering,High-dimensional data},
+number = {462},
+pages = {397--408},
+title = {{Clustering for sparsely sampled functional data}},
+volume = {98},
+year = {2003}
+}
+@article{Yao2005,
+abstract = {We propose a nonparametric method to perform functional principal components analysis for the case of sparse longitudinal data. The method aims at irregularly spaced longitudinal data, where the number of repeated measurements available per subject is small. In contrast, classical functional data analysis requires a large number of regularly spaced measurements per subject We assume that the repeated measurements are located randomly with a random number of repetitions for each subject and are determined by an underlying smooth random (subject-specific) trajectory plus measurement errors. Basic elements of our approach are the parsimonious estimation of the co-variance structure and mean function of the trajectories, and the estimation of the variance of the measurement errors. The eigenfunction basis is estimated from the data, and functional principal components score estimates are obtained by a conditioning step. This conditional estimation method is conceptually simple and straightforward to implement A key step is the derivation of asymptotic consistency and distribution results under mild conditions, using tools from functional analysis. Functional data analysis for sparse longitudinal data enables prediction of individual smooth trajectories even if only one or few measurements are available for a subject. Asymptotic pointwise and simultaneous confidence bands are obtained for predicted individual trajectories, based on asymptotic distributions, for simultaneous bands under the assumption of a finite number of components. Model selection techniques, such as the Akaike information criterion, are used to choose the model dimension corresponding to the number of eigenfunctions in the model. The methods are illustrated with a simulation study, longitudinal CD4 data for a sample of AIDS patients, and time-course gene expression data for the yeast cell cycle. {\textcopyright} 2005 American Statistical Association.},
+author = {Yao, Fang and M{\"{u}}ller, Hans Georg and Wang, Jane Ling},
+doi = {10.1198/016214504000001745},
+file = {:Users/wangfei/Documents/Courses/STAT/STAT591{\_}Wang/Final{\_}Project/Functional Data Analysis for Sparse Longitudinal Data.pdf:pdf},
+issn = {01621459},
+journal = {Journal of the American Statistical Association},
+keywords = {Asymptotics,Conditioning,Confidence band,Measurement error,Principal components,Simultaneous inference,Smoothing},
+number = {470},
+pages = {577--590},
+title = {{Functional data analysis for sparse longitudinal data}},
+volume = {100},
+year = {2005}
+}
+@article{Yao2005a,
+abstract = {We propose nonparametric methods for functional linear regression which are designed for sparse longitudinal data, where both the predictor and response are functions of a covariate such as time. Predictor and response processes have smooth random trajectories, and the data consist of a small number of noisy repeated measurements made at irregular times for a sample of subjects. In longitudinal studies, the number of repeated measurements per subject is often small and may be modeled as a discrete random number and, accordingly, only a finite and asymptotically nonincreasing number of measurements are available for each subject or experimental unit. We propose a functional regression approach for this situation, using functional principal component analysis, where we estimate the functional principal component scores through conditional expectations. This allows the prediction of an unobserved response trajectory from sparse measurements of a predictor trajectory. The resulting technique is flexible and allows for different patterns regarding the timing of the measurements obtained for predictor and response trajectories. Asymptotic properties for a sample of n subjects are investigated under mild conditions, as n → ∞, and we obtain consistent estimation for the regression function. Besides convergence results for the components of functional linear regression, such as the regression parameter function, we construct asymptotic pointwise confidence bands for the predicted trajectories. A functional coefficient of determination as a measure of the variance explained by the functional regression model is introduced, extending the standard R2 to the functional case. The proposed methods are illustrated with a simulation study, longitudinal primary biliary liver cirrhosis data and an analysis of the longitudinal relationship between blood pressure and body mass index. {\textcopyright} Institute of Mathematical Statistics, 2005.},
+author = {Yao, Fang and Muller, Hans Georg and Wang, Jane Ling},
+doi = {10.1214/009053605000000660},
+file = {:Users/wangfei/Documents/GitHub/STAT591/References/euclid.aos.1140191677.pdf:pdf},
+issn = {00905364},
+journal = {Annals of Statistics},
+keywords = {Asymptotics,Coefficient of determination,Confidence band,Eigenfunctions,Functional data analysis,Prediction,Repeated measurements,Smoothing,Stochastic process},
+number = {6},
+pages = {2873--2903},
+title = {{Functional linear regression analysis for longitudinal data}},
+volume = {33},
+year = {2005}
+}
+@article{Boularan1994,
+abstract = {We develop in this paper a two-stage nonparametric method for estimating growth curves. Our two-stage additive model consists in assuming that dependence between height and age is a sum of two components, the former being the same for all the individuals. We estimate both functional components by nonparametric kernel smoothing techniques. We first give theoretical results concerning L1,L2 and L∞ rates of convergence for our estimates. Then we discuss how to choose the smoothing degree in an optimal way. This method is then applied to a real example. {\textcopyright} 1994.},
+author = {Boularan, Jo{\"{e}}l and Ferr{\'{e}}, Louis and Vieu, Philippe},
+doi = {10.1016/0378-3758(94)90014-0},
+file = {:Users/wangfei/Documents/GitHub/STAT591/References/1-s2.0-0378375894900140-main.pdf:pdf;:Users/wangfei/Library/Application Support/Mendeley Desktop/Downloaded/Boularan, Ferr{\'{e}}, Vieu - 1994 - Growth curves a two-stage nonparametric approach.pdf:pdf},
+issn = {03783758},
+journal = {Journal of Statistical Planning and Inference},
+keywords = {Additive model,growth curves,kernel smoothing,nonparametric mixed effects model,two-stage procedure},
+number = {3},
+pages = {327--350},
+title = {{Growth curves: a two-stage nonparametric approach}},
+volume = {38},
+year = {1994}
+}
+@article{Journal2019,
+author = {Shi, Minggao and Weiss, Robert E. and Taylor, Jeremy M. G.},
+file = {:Users/wangfei/Documents/GitHub/STAT591/References/2986151.pdf:pdf},
+journal = {Applied Statistics},
+number = {2},
+pages = {151--163},
+title = {{An analysis of paediatric CD4 Counts for acquired immune deficiency syndrome using flexible random curves}},
+volume = {45},
+year = {1996}
+}
+@article{Hastie2017,
+author = {James, Gareth M. and Hastie, Trevor J. and Sugar, Catherine A.},
+file = {:Users/wangfei/Documents/GitHub/STAT591/References/2673632.pdf:pdf},
+journal = {Biometrika},
+number = {3},
+pages = {587--602},
+title = {{Principal component models for sparse functional data}},
+volume = {87},
+year = {2000}
+}
 
+\end{filecontents*}
 
 
 \begin{document}
@@ -48,6 +197,7 @@
 \maketitle
 
 %\clearpage
+
 
 \section{SUMMARY OF CONTRIBUTIONS}
 Functional principal components (FPC) analysis can reduce random trajectories of random curves to a set of FPC scores, and therefore is popular in longitudinal data analysis. 
@@ -348,9 +498,11 @@ In practice, it's very often that we need to compare two or more groups of longi
 % \vspace{3mm}
 % D: $h\sim p_{data} \longmapsto $ Likelihood (to play an adversarial role)
 
-\newpage
-\section*{References}
-\printbibliography    
+% \newpage
+% \section*{References}
+
+\bibliographystyle{unsrt}
+\bibliography{ref} 
 
 
 

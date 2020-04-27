@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage{mathtools} %loads amsmath as well
+
+\input{./Definitions}
+
+
+\begin{document}
+
+\begin{itemize}
+	\item $\mathcal{L}_c(\zvec|(\yvec, \Mvec)) = ||\Wvec \odot (G(\zvec) - \yvec)||_1$
+	where $\Wvec$ is the importance weighting term:
+	\[ \Wvec_i = 
+	\begin{cases*}
+	\sum_{j \in \Nvec(i)} \frac{1 - \Mvec_j}{|\Nvec(i)|} \quad& if \. $ \Mvec_i \neq 0 $ \\
+	0 & if \. $ \Mvec_i = 0 $
+	\end{cases*}\]
+
+	\item $\mathcal{L}_p(\zvec) = \lambda log(1 - D(G(\zvec)))$
+
+\end{itemize}
+
+\end{document}
